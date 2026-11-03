@@ -1,0 +1,1672 @@
+{
+  "schema": 1,
+  "graph_sha256": "BFD476FAB760A8ABE73CC934379116B94AB48DD864F927E190EA3DD8F80D940E",
+  "source_sha256": {
+    "rtl/periph/ai_conv3x3_quant8.v": "61E06BECF6D0795E117BF82306A20AAFF1CF0FDB850F0CBC2EEFA045267E0CDE",
+    "rtl/periph/ai_q24_post.v": "379ADC7218CFF0E4A53A5BF1EB8F065C57E1D6B20FF13F3780241A064878C210",
+    "sw/common/ai_mac.h": "F9C605400260A6B336BF4A97C7D09DFF5E67653EC46E7D43C4718043C38F59D7",
+    "sw/common/ai_mac_block.h": "D91A416D5E1BCC46FF796E4DFF722743B51AE1A4AB7D39FC97BDA1388688A853",
+    "sw/common/ai_mac_dw3x3.h": "73C8A5F45473E9A7205FB3DF9A6A9442EF34D35A408F71EFA7977E64F73E2A86",
+    "sw/common/ai_mac_input_tile.h": "D5443832A5274E49005AE74E43059032E62A10F62FE491EF1F92982B739F5B94",
+    "sw/common/ai_mac_prepack.h": "CF5EADDED5B551999706A3B751BCB46A1C667051F18E1EE50ECF02F56A7D7C26",
+    "sw/common/ai_mac_reuse.h": "8CD09C16E6D59FF061B8074A9ACD308E3AFC9E2C7FB348A887314B01FD6F8524",
+    "sw/common/ai_mac_tile.h": "FE7962ACD0C256D529223CD7055B4D10F4A5E6B19CD35FDE76D24EB2F2FD5B99",
+    "sw/common/int8_shortcut_lut.h": "AF9FC3731099CD333A621D76B23EF59328BABF851D70D74A00D5F520EDB48948",
+    "sw/common/soc.h": "6BB7343695D08081C960DAA1B33ABF859F18B1575028253FAD5CCD32ADBAAFE0",
+    "sw/common/stack_probe.h": "0C284B82D132A094273C795388C85A29858A60A1CA2475273CE36E80A05DE7A2",
+    "sw/yolo_fixed/block_input_cache.h": "7855484F2D34D6C9803C881C0A366ACCCECF240AC58233404B6CBE1CB2A0C3AE",
+    "sw/yolo_fixed/block_post8.h": "D67608CDEBD7BEC44DE6F266245BE57A0F1B8E81A6E711DF9DFB1CE03B138025",
+    "sw/yolo_fixed/block_profile.h": "66798DD96052D8579BECD1838B8EEEFB9021479A2E622FCA00BFDB21AE842131",
+    "sw/yolo_fixed/block_q24_reuse.h": "88B07051D847CBEA73775D55209757C9FA7B7EAD93749BFB7F36B371C3C02B2B",
+    "sw/yolo_fixed/cache_pack4.h": "0A6497F659814B01A81FE61BE937D28393882DED7E98BFC59F98C193A42ABDAC",
+    "sw/yolo_fixed/dw3_leaky_clip.h": "332A80C060AB58112780C556B1B20500AE65A0E2DB238FF094E2CB51C6A364BB",
+    "sw/yolo_fixed/dw3x3_rolling.h": "3E02FFFA62AEFFD29B3254B8C1BA741E4F75BF75FFE918BD9A4858AE57DFE030",
+    "sw/yolo_fixed/dw5_pack_fast.h": "15642C8A305DEE2F8B7D07CD168EF6BCC4B0F02A6B14E410D1B37891AFBC1DEB",
+    "sw/yolo_fixed/dw5x5_block.h": "E2818786219E1CCCBB4834FECE88A095A4E8B6FDCDD510CDFF65DCEFE9C37E09",
+    "sw/yolo_fixed/layer_cache.h": "D0E49B9B7B60906F173D448F77E5A56EC847E707E95A03BE4990C331646B1C5E",
+    "sw/yolo_fixed/main.c": "E6D4DC9F76BCD11E645ECE677DC8AE3517116E9F2704502E0A679F8BF55743B5",
+    "sw/yolo_fixed/model_graph.h": "BFD476FAB760A8ABE73CC934379116B94AB48DD864F927E190EA3DD8F80D940E",
+    "sw/yolo_fixed/pool_separable.h": "291E9D7679F67B545F6EE043AF95B2A077A561C430C20D924AB6F140DFC321A7",
+    "sw/yolo_fixed/post8_word_store.h": "1E0D4A438F47521E79A92F126F9F84C6970145A38D70EF8AE51155730C7A81AA",
+    "sw/yolo_fixed/postprocess_lut.h": "79337421D4BBBA2B7B1F3C8CDD9BE49FEA846A4A514932564A8FA4126EB6F2B1",
+    "sw/yolo_fixed/rgb3_block.h": "B60AFDADA9E0CC3CA6626864976D79FEB6B369649F6362B36B1C722778AB0779",
+    "tools/yolo_plan_identity_arena.py": "FFBC5FEAAC015AA7B9B5EBE4FEA5F3F4E01B00D31533B62D5B1C2C33DAF6D1A7"
+  },
+  "plan": {
+    "result": "ISOLATED_IDENTITY_PLAN",
+    "alignment": 32,
+    "arena_bytes": 819200,
+    "peak_live_padded_bytes": 768000,
+    "offsets": [
+      0,
+      204800,
+      0,
+      204800,
+      0,
+      307200,
+      0,
+      0,
+      102400,
+      204800,
+      0,
+      153600,
+      204800,
+      409600,
+      0,
+      0,
+      51200,
+      102400,
+      307200,
+      0,
+      0,
+      102400,
+      153600,
+      0,
+      51200,
+      64000,
+      140800,
+      0,
+      0,
+      12800,
+      25600,
+      102400,
+      0,
+      0,
+      25600,
+      38400,
+      115200,
+      0,
+      25600,
+      179200,
+      25600,
+      25600,
+      51200,
+      76800,
+      230400,
+      0,
+      0,
+      25600,
+      51200,
+      204800,
+      0,
+      0,
+      51200,
+      76800,
+      230400,
+      0,
+      0,
+      25600,
+      51200,
+      0,
+      38400,
+      48000,
+      102400,
+      0,
+      0,
+      9600,
+      19200,
+      73600,
+      0,
+      0,
+      19200,
+      28800,
+      83200,
+      0,
+      0,
+      9600,
+      19200,
+      73600,
+      0,
+      0,
+      19200,
+      28800,
+      0,
+      13600,
+      28800,
+      51200,
+      0,
+      0,
+      4800,
+      28800,
+      51200,
+      0,
+      0,
+      9600,
+      28800,
+      51200,
+      0,
+      0,
+      4800,
+      28800,
+      51200,
+      0,
+      0,
+      9600,
+      28800,
+      51200,
+      0,
+      0,
+      4800,
+      0,
+      9600,
+      14400,
+      9600,
+      28800,
+      33600,
+      0,
+      9600,
+      28800,
+      9600,
+      28800,
+      38400,
+      38400,
+      9600,
+      63904,
+      102304,
+      150304,
+      63904,
+      111904,
+      63904,
+      111904,
+      111904
+    ],
+    "roots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      14,
+      16,
+      17,
+      18,
+      19,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      27,
+      29,
+      30,
+      31,
+      32,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      40,
+      42,
+      43,
+      44,
+      45,
+      45,
+      47,
+      48,
+      49,
+      50,
+      50,
+      52,
+      53,
+      54,
+      55,
+      55,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      63,
+      65,
+      66,
+      67,
+      68,
+      68,
+      70,
+      71,
+      72,
+      73,
+      73,
+      75,
+      76,
+      77,
+      78,
+      78,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      86,
+      88,
+      89,
+      90,
+      91,
+      91,
+      93,
+      94,
+      95,
+      96,
+      96,
+      98,
+      99,
+      100,
+      101,
+      101,
+      103,
+      104,
+      105,
+      106,
+      106,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      120,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      129
+    ],
+    "groups": [
+      {
+        "root": 0,
+        "members": [
+          0
+        ],
+        "bytes": 204800,
+        "last_use": 1
+      },
+      {
+        "root": 1,
+        "members": [
+          1
+        ],
+        "bytes": 204800,
+        "last_use": 2
+      },
+      {
+        "root": 2,
+        "members": [
+          2
+        ],
+        "bytes": 204800,
+        "last_use": 3
+      },
+      {
+        "root": 3,
+        "members": [
+          3
+        ],
+        "bytes": 102400,
+        "last_use": 8
+      },
+      {
+        "root": 4,
+        "members": [
+          4
+        ],
+        "bytes": 204800,
+        "last_use": 5
+      },
+      {
+        "root": 5,
+        "members": [
+          5
+        ],
+        "bytes": 204800,
+        "last_use": 6
+      },
+      {
+        "root": 6,
+        "members": [
+          6,
+          7
+        ],
+        "bytes": 102400,
+        "last_use": 8
+      },
+      {
+        "root": 8,
+        "members": [
+          8
+        ],
+        "bytes": 102400,
+        "last_use": 9
+      },
+      {
+        "root": 9,
+        "members": [
+          9
+        ],
+        "bytes": 614400,
+        "last_use": 10
+      },
+      {
+        "root": 10,
+        "members": [
+          10
+        ],
+        "bytes": 153600,
+        "last_use": 11
+      },
+      {
+        "root": 11,
+        "members": [
+          11
+        ],
+        "bytes": 51200,
+        "last_use": 16
+      },
+      {
+        "root": 12,
+        "members": [
+          12
+        ],
+        "bytes": 204800,
+        "last_use": 13
+      },
+      {
+        "root": 13,
+        "members": [
+          13
+        ],
+        "bytes": 204800,
+        "last_use": 14
+      },
+      {
+        "root": 14,
+        "members": [
+          14,
+          15
+        ],
+        "bytes": 51200,
+        "last_use": 16
+      },
+      {
+        "root": 16,
+        "members": [
+          16
+        ],
+        "bytes": 51200,
+        "last_use": 21
+      },
+      {
+        "root": 17,
+        "members": [
+          17
+        ],
+        "bytes": 204800,
+        "last_use": 18
+      },
+      {
+        "root": 18,
+        "members": [
+          18
+        ],
+        "bytes": 204800,
+        "last_use": 19
+      },
+      {
+        "root": 19,
+        "members": [
+          19,
+          20
+        ],
+        "bytes": 51200,
+        "last_use": 21
+      },
+      {
+        "root": 21,
+        "members": [
+          21
+        ],
+        "bytes": 51200,
+        "last_use": 22
+      },
+      {
+        "root": 22,
+        "members": [
+          22
+        ],
+        "bytes": 204800,
+        "last_use": 23
+      },
+      {
+        "root": 23,
+        "members": [
+          23
+        ],
+        "bytes": 51200,
+        "last_use": 24
+      },
+      {
+        "root": 24,
+        "members": [
+          24
+        ],
+        "bytes": 12800,
+        "last_use": 29
+      },
+      {
+        "root": 25,
+        "members": [
+          25
+        ],
+        "bytes": 76800,
+        "last_use": 26
+      },
+      {
+        "root": 26,
+        "members": [
+          26
+        ],
+        "bytes": 76800,
+        "last_use": 27
+      },
+      {
+        "root": 27,
+        "members": [
+          27,
+          28
+        ],
+        "bytes": 12800,
+        "last_use": 29
+      },
+      {
+        "root": 29,
+        "members": [
+          29
+        ],
+        "bytes": 12800,
+        "last_use": 34
+      },
+      {
+        "root": 30,
+        "members": [
+          30
+        ],
+        "bytes": 76800,
+        "last_use": 31
+      },
+      {
+        "root": 31,
+        "members": [
+          31
+        ],
+        "bytes": 76800,
+        "last_use": 32
+      },
+      {
+        "root": 32,
+        "members": [
+          32,
+          33
+        ],
+        "bytes": 12800,
+        "last_use": 34
+      },
+      {
+        "root": 34,
+        "members": [
+          34
+        ],
+        "bytes": 12800,
+        "last_use": 35
+      },
+      {
+        "root": 35,
+        "members": [
+          35
+        ],
+        "bytes": 76800,
+        "last_use": 36
+      },
+      {
+        "root": 36,
+        "members": [
+          36
+        ],
+        "bytes": 76800,
+        "last_use": 37
+      },
+      {
+        "root": 37,
+        "members": [
+          37
+        ],
+        "bytes": 25600,
+        "last_use": 42
+      },
+      {
+        "root": 38,
+        "members": [
+          38
+        ],
+        "bytes": 153600,
+        "last_use": 39
+      },
+      {
+        "root": 39,
+        "members": [
+          39
+        ],
+        "bytes": 153600,
+        "last_use": 40
+      },
+      {
+        "root": 40,
+        "members": [
+          40,
+          41
+        ],
+        "bytes": 25600,
+        "last_use": 42
+      },
+      {
+        "root": 42,
+        "members": [
+          42
+        ],
+        "bytes": 25600,
+        "last_use": 47
+      },
+      {
+        "root": 43,
+        "members": [
+          43
+        ],
+        "bytes": 153600,
+        "last_use": 44
+      },
+      {
+        "root": 44,
+        "members": [
+          44
+        ],
+        "bytes": 153600,
+        "last_use": 45
+      },
+      {
+        "root": 45,
+        "members": [
+          45,
+          46
+        ],
+        "bytes": 25600,
+        "last_use": 47
+      },
+      {
+        "root": 47,
+        "members": [
+          47
+        ],
+        "bytes": 25600,
+        "last_use": 52
+      },
+      {
+        "root": 48,
+        "members": [
+          48
+        ],
+        "bytes": 153600,
+        "last_use": 49
+      },
+      {
+        "root": 49,
+        "members": [
+          49
+        ],
+        "bytes": 153600,
+        "last_use": 50
+      },
+      {
+        "root": 50,
+        "members": [
+          50,
+          51
+        ],
+        "bytes": 25600,
+        "last_use": 52
+      },
+      {
+        "root": 52,
+        "members": [
+          52
+        ],
+        "bytes": 25600,
+        "last_use": 57
+      },
+      {
+        "root": 53,
+        "members": [
+          53
+        ],
+        "bytes": 153600,
+        "last_use": 54
+      },
+      {
+        "root": 54,
+        "members": [
+          54
+        ],
+        "bytes": 153600,
+        "last_use": 55
+      },
+      {
+        "root": 55,
+        "members": [
+          55,
+          56
+        ],
+        "bytes": 25600,
+        "last_use": 57
+      },
+      {
+        "root": 57,
+        "members": [
+          57
+        ],
+        "bytes": 25600,
+        "last_use": 58
+      },
+      {
+        "root": 58,
+        "members": [
+          58
+        ],
+        "bytes": 153600,
+        "last_use": 59
+      },
+      {
+        "root": 59,
+        "members": [
+          59
+        ],
+        "bytes": 38400,
+        "last_use": 60
+      },
+      {
+        "root": 60,
+        "members": [
+          60
+        ],
+        "bytes": 9600,
+        "last_use": 65
+      },
+      {
+        "root": 61,
+        "members": [
+          61
+        ],
+        "bytes": 54400,
+        "last_use": 62
+      },
+      {
+        "root": 62,
+        "members": [
+          62
+        ],
+        "bytes": 54400,
+        "last_use": 63
+      },
+      {
+        "root": 63,
+        "members": [
+          63,
+          64
+        ],
+        "bytes": 9600,
+        "last_use": 65
+      },
+      {
+        "root": 65,
+        "members": [
+          65
+        ],
+        "bytes": 9600,
+        "last_use": 70
+      },
+      {
+        "root": 66,
+        "members": [
+          66
+        ],
+        "bytes": 54400,
+        "last_use": 67
+      },
+      {
+        "root": 67,
+        "members": [
+          67
+        ],
+        "bytes": 54400,
+        "last_use": 68
+      },
+      {
+        "root": 68,
+        "members": [
+          68,
+          69
+        ],
+        "bytes": 9600,
+        "last_use": 70
+      },
+      {
+        "root": 70,
+        "members": [
+          70
+        ],
+        "bytes": 9600,
+        "last_use": 75
+      },
+      {
+        "root": 71,
+        "members": [
+          71
+        ],
+        "bytes": 54400,
+        "last_use": 72
+      },
+      {
+        "root": 72,
+        "members": [
+          72
+        ],
+        "bytes": 54400,
+        "last_use": 73
+      },
+      {
+        "root": 73,
+        "members": [
+          73,
+          74
+        ],
+        "bytes": 9600,
+        "last_use": 75
+      },
+      {
+        "root": 75,
+        "members": [
+          75
+        ],
+        "bytes": 9600,
+        "last_use": 80
+      },
+      {
+        "root": 76,
+        "members": [
+          76
+        ],
+        "bytes": 54400,
+        "last_use": 77
+      },
+      {
+        "root": 77,
+        "members": [
+          77
+        ],
+        "bytes": 54400,
+        "last_use": 78
+      },
+      {
+        "root": 78,
+        "members": [
+          78,
+          79
+        ],
+        "bytes": 9600,
+        "last_use": 80
+      },
+      {
+        "root": 80,
+        "members": [
+          80
+        ],
+        "bytes": 9600,
+        "last_use": 124
+      },
+      {
+        "root": 81,
+        "members": [
+          81
+        ],
+        "bytes": 54400,
+        "last_use": 82
+      },
+      {
+        "root": 82,
+        "members": [
+          82
+        ],
+        "bytes": 13600,
+        "last_use": 83
+      },
+      {
+        "root": 83,
+        "members": [
+          83
+        ],
+        "bytes": 4800,
+        "last_use": 88
+      },
+      {
+        "root": 84,
+        "members": [
+          84
+        ],
+        "bytes": 22400,
+        "last_use": 85
+      },
+      {
+        "root": 85,
+        "members": [
+          85
+        ],
+        "bytes": 22400,
+        "last_use": 86
+      },
+      {
+        "root": 86,
+        "members": [
+          86,
+          87
+        ],
+        "bytes": 4800,
+        "last_use": 88
+      },
+      {
+        "root": 88,
+        "members": [
+          88
+        ],
+        "bytes": 4800,
+        "last_use": 93
+      },
+      {
+        "root": 89,
+        "members": [
+          89
+        ],
+        "bytes": 22400,
+        "last_use": 90
+      },
+      {
+        "root": 90,
+        "members": [
+          90
+        ],
+        "bytes": 22400,
+        "last_use": 91
+      },
+      {
+        "root": 91,
+        "members": [
+          91,
+          92
+        ],
+        "bytes": 4800,
+        "last_use": 93
+      },
+      {
+        "root": 93,
+        "members": [
+          93
+        ],
+        "bytes": 4800,
+        "last_use": 98
+      },
+      {
+        "root": 94,
+        "members": [
+          94
+        ],
+        "bytes": 22400,
+        "last_use": 95
+      },
+      {
+        "root": 95,
+        "members": [
+          95
+        ],
+        "bytes": 22400,
+        "last_use": 96
+      },
+      {
+        "root": 96,
+        "members": [
+          96,
+          97
+        ],
+        "bytes": 4800,
+        "last_use": 98
+      },
+      {
+        "root": 98,
+        "members": [
+          98
+        ],
+        "bytes": 4800,
+        "last_use": 103
+      },
+      {
+        "root": 99,
+        "members": [
+          99
+        ],
+        "bytes": 22400,
+        "last_use": 100
+      },
+      {
+        "root": 100,
+        "members": [
+          100
+        ],
+        "bytes": 22400,
+        "last_use": 101
+      },
+      {
+        "root": 101,
+        "members": [
+          101,
+          102
+        ],
+        "bytes": 4800,
+        "last_use": 103
+      },
+      {
+        "root": 103,
+        "members": [
+          103
+        ],
+        "bytes": 4800,
+        "last_use": 108
+      },
+      {
+        "root": 104,
+        "members": [
+          104
+        ],
+        "bytes": 22400,
+        "last_use": 105
+      },
+      {
+        "root": 105,
+        "members": [
+          105
+        ],
+        "bytes": 22400,
+        "last_use": 106
+      },
+      {
+        "root": 106,
+        "members": [
+          106,
+          107
+        ],
+        "bytes": 4800,
+        "last_use": 108
+      },
+      {
+        "root": 108,
+        "members": [
+          108
+        ],
+        "bytes": 4800,
+        "last_use": 114
+      },
+      {
+        "root": 109,
+        "members": [
+          109
+        ],
+        "bytes": 4800,
+        "last_use": 114
+      },
+      {
+        "root": 110,
+        "members": [
+          110
+        ],
+        "bytes": 4800,
+        "last_use": 111
+      },
+      {
+        "root": 111,
+        "members": [
+          111
+        ],
+        "bytes": 4800,
+        "last_use": 114
+      },
+      {
+        "root": 112,
+        "members": [
+          112
+        ],
+        "bytes": 4800,
+        "last_use": 113
+      },
+      {
+        "root": 113,
+        "members": [
+          113
+        ],
+        "bytes": 4800,
+        "last_use": 114
+      },
+      {
+        "root": 114,
+        "members": [
+          114
+        ],
+        "bytes": 19200,
+        "last_use": 115
+      },
+      {
+        "root": 115,
+        "members": [
+          115
+        ],
+        "bytes": 9600,
+        "last_use": 122
+      },
+      {
+        "root": 116,
+        "members": [
+          116
+        ],
+        "bytes": 9600,
+        "last_use": 117
+      },
+      {
+        "root": 117,
+        "members": [
+          117
+        ],
+        "bytes": 9600,
+        "last_use": 118
+      },
+      {
+        "root": 118,
+        "members": [
+          118
+        ],
+        "bytes": 9600,
+        "last_use": 119
+      },
+      {
+        "root": 119,
+        "members": [
+          119
+        ],
+        "bytes": 9600,
+        "last_use": 120
+      },
+      {
+        "root": 120,
+        "members": [
+          120,
+          121
+        ],
+        "bytes": 25500,
+        "last_use": 131
+      },
+      {
+        "root": 122,
+        "members": [
+          122
+        ],
+        "bytes": 9600,
+        "last_use": 123
+      },
+      {
+        "root": 123,
+        "members": [
+          123
+        ],
+        "bytes": 38400,
+        "last_use": 124
+      },
+      {
+        "root": 124,
+        "members": [
+          124
+        ],
+        "bytes": 48000,
+        "last_use": 125
+      },
+      {
+        "root": 125,
+        "members": [
+          125
+        ],
+        "bytes": 48000,
+        "last_use": 126
+      },
+      {
+        "root": 126,
+        "members": [
+          126
+        ],
+        "bytes": 48000,
+        "last_use": 127
+      },
+      {
+        "root": 127,
+        "members": [
+          127
+        ],
+        "bytes": 48000,
+        "last_use": 128
+      },
+      {
+        "root": 128,
+        "members": [
+          128
+        ],
+        "bytes": 48000,
+        "last_use": 129
+      },
+      {
+        "root": 129,
+        "members": [
+          129,
+          130
+        ],
+        "bytes": 102000,
+        "last_use": 131
+      }
+    ],
+    "retained_heads": [
+      121,
+      130
+    ],
+    "forwarded_layers": [
+      7,
+      15,
+      20,
+      28,
+      33,
+      41,
+      46,
+      51,
+      56,
+      64,
+      69,
+      74,
+      79,
+      87,
+      92,
+      97,
+      102,
+      107,
+      121,
+      130
+    ],
+    "forwarded_tensor_bytes": 522700,
+    "dependencies": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15,
+        11
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20,
+        16
+      ],
+      [
+        21
+      ],
+      [
+        22
+      ],
+      [
+        23
+      ],
+      [
+        24
+      ],
+      [
+        25
+      ],
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28,
+        24
+      ],
+      [
+        29
+      ],
+      [
+        30
+      ],
+      [
+        31
+      ],
+      [
+        32
+      ],
+      [
+        33,
+        29
+      ],
+      [
+        34
+      ],
+      [
+        35
+      ],
+      [
+        36
+      ],
+      [
+        37
+      ],
+      [
+        38
+      ],
+      [
+        39
+      ],
+      [
+        40
+      ],
+      [
+        41,
+        37
+      ],
+      [
+        42
+      ],
+      [
+        43
+      ],
+      [
+        44
+      ],
+      [
+        45
+      ],
+      [
+        46,
+        42
+      ],
+      [
+        47
+      ],
+      [
+        48
+      ],
+      [
+        49
+      ],
+      [
+        50
+      ],
+      [
+        51,
+        47
+      ],
+      [
+        52
+      ],
+      [
+        53
+      ],
+      [
+        54
+      ],
+      [
+        55
+      ],
+      [
+        56,
+        52
+      ],
+      [
+        57
+      ],
+      [
+        58
+      ],
+      [
+        59
+      ],
+      [
+        60
+      ],
+      [
+        61
+      ],
+      [
+        62
+      ],
+      [
+        63
+      ],
+      [
+        64,
+        60
+      ],
+      [
+        65
+      ],
+      [
+        66
+      ],
+      [
+        67
+      ],
+      [
+        68
+      ],
+      [
+        69,
+        65
+      ],
+      [
+        70
+      ],
+      [
+        71
+      ],
+      [
+        72
+      ],
+      [
+        73
+      ],
+      [
+        74,
+        70
+      ],
+      [
+        75
+      ],
+      [
+        76
+      ],
+      [
+        77
+      ],
+      [
+        78
+      ],
+      [
+        79,
+        75
+      ],
+      [
+        80
+      ],
+      [
+        81
+      ],
+      [
+        82
+      ],
+      [
+        83
+      ],
+      [
+        84
+      ],
+      [
+        85
+      ],
+      [
+        86
+      ],
+      [
+        87,
+        83
+      ],
+      [
+        88
+      ],
+      [
+        89
+      ],
+      [
+        90
+      ],
+      [
+        91
+      ],
+      [
+        92,
+        88
+      ],
+      [
+        93
+      ],
+      [
+        94
+      ],
+      [
+        95
+      ],
+      [
+        96
+      ],
+      [
+        97,
+        93
+      ],
+      [
+        98
+      ],
+      [
+        99
+      ],
+      [
+        100
+      ],
+      [
+        101
+      ],
+      [
+        102,
+        98
+      ],
+      [
+        103
+      ],
+      [
+        104
+      ],
+      [
+        105
+      ],
+      [
+        106
+      ],
+      [
+        107,
+        103
+      ],
+      [
+        108
+      ],
+      [
+        108
+      ],
+      [
+        110
+      ],
+      [
+        108
+      ],
+      [
+        112
+      ],
+      [
+        113,
+        111,
+        109,
+        108
+      ],
+      [
+        114
+      ],
+      [
+        115
+      ],
+      [
+        116
+      ],
+      [
+        117
+      ],
+      [
+        118
+      ],
+      [
+        119
+      ],
+      [
+        120
+      ],
+      [
+        115
+      ],
+      [
+        122
+      ],
+      [
+        123,
+        80
+      ],
+      [
+        124
+      ],
+      [
+        125
+      ],
+      [
+        126
+      ],
+      [
+        127
+      ],
+      [
+        128
+      ],
+      [
+        129
+      ]
+    ],
+    "domain_contract": "Only unity dropout/head immediately after a same-shaped convolution. Forwarding requires successful convolution outputs saturated to[-127,127]; not true for arbitrary INT8 including-128.",
+    "scope": "Offline first-fit proposal with inclusive lifetimes, no in-place nonidentity writes. Does not update production header or prove target speed. Independent symbolic ownership check required."
+  },
+  "symbolic_check": {
+    "result": "SYMBOLIC_OWNERSHIP_PASS",
+    "writes_of_aligned_blocks": 218110,
+    "retained_heads": [
+      121,
+      130
+    ],
+    "roots": 111
+  },
+  "domain": "Successful reviewed convolution outputs clip to[-127,127]. Quant RTL identity must match the deployed hardware; unsupported IDs fall back to the reviewed C stores. Upstream errors abort before forwarding. Not valid for arbitrary INT8 or changed producers.",
+  "scope": "Default-off production proposal, not adoption, board evidence or a whole-program formal theorem."
+}

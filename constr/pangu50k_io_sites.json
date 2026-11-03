@@ -1,0 +1,1251 @@
+{
+  "device": "PGL50H",
+  "package": "FBG484",
+  "provenance": "Actual physical primitive sites exported from the S22 base PNR database; its bitstream passed physical DDR and YOLO. Original IO constraints agree with official board pin mapping.",
+  "functional_source_commit": "20bdd8e6c2ddf580505cd05601ad42a23b7f9b75",
+  "bitstream_sha256": "C76BAAE8D18FCAC488E47CDFC6F70413FD6F0F7D574D86CF810B4F2B6041D43B",
+  "netlist_sha256": "19D164ADC9344BF0F1633CBD468183FD573C06AEB0F299EFEF80C8F01EDB329A",
+  "ports": {
+    "hdmi_sda": "P18",
+    "mem_dq[0]": "U1",
+    "mem_dq[1]": "U3",
+    "mem_dq[2]": "T2",
+    "mem_dq[3]": "Y2",
+    "mem_dq[4]": "T1",
+    "mem_dq[5]": "Y1",
+    "mem_dq[6]": "M7",
+    "mem_dq[7]": "W1",
+    "mem_dq[8]": "P1",
+    "mem_dq[9]": "M2",
+    "mem_dq[10]": "R1",
+    "mem_dq[11]": "M1",
+    "mem_dq[12]": "P2",
+    "mem_dq[13]": "L3",
+    "mem_dq[14]": "P3",
+    "mem_dq[15]": "N4",
+    "mem_dq[16]": "K4",
+    "mem_dq[17]": "K1",
+    "mem_dq[18]": "J3",
+    "mem_dq[19]": "L4",
+    "mem_dq[20]": "K3",
+    "mem_dq[21]": "M3",
+    "mem_dq[22]": "J1",
+    "mem_dq[23]": "M4",
+    "mem_dq[24]": "J6",
+    "mem_dq[25]": "F1",
+    "mem_dq[26]": "K7",
+    "mem_dq[27]": "F2",
+    "mem_dq[28]": "H5",
+    "mem_dq[29]": "H3",
+    "mem_dq[30]": "J4",
+    "mem_dq[31]": "G3",
+    "mem_dqs[0]": "V2",
+    "mem_dqs[1]": "N3",
+    "mem_dqs[2]": "M6",
+    "mem_dqs[3]": "E3",
+    "mem_dqs_n[0]": "V1",
+    "mem_dqs_n[1]": "N1",
+    "mem_dqs_n[2]": "L6",
+    "mem_dqs_n[3]": "E1",
+    "hdmi_b[0]": "V21",
+    "hdmi_b[1]": "V22",
+    "hdmi_b[2]": "T21",
+    "hdmi_b[3]": "T22",
+    "hdmi_b[4]": "R20",
+    "hdmi_b[5]": "R22",
+    "hdmi_b[6]": "R19",
+    "hdmi_b[7]": "P19",
+    "hdmi_de": "Y22",
+    "hdmi_g[0]": "M21",
+    "hdmi_g[1]": "M17",
+    "hdmi_g[2]": "M18",
+    "hdmi_g[3]": "M16",
+    "hdmi_g[4]": "N15",
+    "hdmi_g[5]": "L19",
+    "hdmi_g[6]": "K20",
+    "hdmi_g[7]": "L17",
+    "hdmi_hs": "Y21",
+    "hdmi_pclk": "M22",
+    "hdmi_r[0]": "K17",
+    "hdmi_r[1]": "N19",
+    "hdmi_r[2]": "J22",
+    "hdmi_r[3]": "J20",
+    "hdmi_r[4]": "K22",
+    "hdmi_r[5]": "H21",
+    "hdmi_r[6]": "H22",
+    "hdmi_r[7]": "H19",
+    "hdmi_rst_n": "R17",
+    "hdmi_scl": "P17",
+    "hdmi_vs": "W20",
+    "led[0]": "B2",
+    "led[1]": "A2",
+    "led[2]": "B3",
+    "led[3]": "A3",
+    "led[4]": "C5",
+    "led[5]": "A5",
+    "led[6]": "F7",
+    "led[7]": "F8",
+    "mem_a[0]": "N6",
+    "mem_a[1]": "R4",
+    "mem_a[2]": "P6",
+    "mem_a[3]": "F3",
+    "mem_a[4]": "V5",
+    "mem_a[5]": "E4",
+    "mem_a[6]": "V3",
+    "mem_a[7]": "D2",
+    "mem_a[8]": "U4",
+    "mem_a[9]": "P5",
+    "mem_a[10]": "P8",
+    "mem_a[11]": "T4",
+    "mem_a[12]": "P7",
+    "mem_a[13]": "P4",
+    "mem_a[14]": "T3",
+    "mem_ba[0]": "F5",
+    "mem_ba[1]": "W4",
+    "mem_ba[2]": "N7",
+    "mem_cas_n": "H8",
+    "mem_ck": "T6",
+    "mem_ck_n": "T5",
+    "mem_cke": "Y3",
+    "mem_cs_n": "G6",
+    "mem_dm[0]": "W3",
+    "mem_dm[1]": "L1",
+    "mem_dm[2]": "K2",
+    "mem_dm[3]": "G1",
+    "mem_odt": "G7",
+    "mem_ras_n": "J7",
+    "mem_rst_n": "C1",
+    "mem_we_n": "H6",
+    "uart_tx": "R9",
+    "sys_clk": "P20",
+    "uart_rx": "R8"
+  },
+  "sites": {
+    "hdmi_b[0]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_149",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_b[1]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_148",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_b[2]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_165",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_b[3]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_164",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_b[4]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_169",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_b[5]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_168",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_b[6]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBR_LR_328_136",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_b[7]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_137",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_de": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_140",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[0]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_201",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[1]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_109",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[2]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_108",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[3]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_121",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[4]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_120",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[5]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_232",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[6]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_233",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_g[7]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_240",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_hs": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_141",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_pclk": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_200",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[0]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_241",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[1]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_208",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[2]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_228",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[3]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_229",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[4]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_212",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[5]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_237",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[6]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_236",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_r[7]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_272",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_rst_n": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_41",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_scl": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_45",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_sda": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_328_44",
+        "terminal": "I",
+        "iostandard": "LVCMOS33"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_328_44",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "hdmi_vs": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_328_145",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[0]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBD_16_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[1]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_TB_17_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[2]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBD_32_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[3]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_TB_33_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[4]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBD_64_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[5]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBR_TB_65_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[6]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBD_44_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "led[7]": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_TB_45_376",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "mem_a[0]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_92",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[10]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBR_LR_0_17",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[11]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_113",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[12]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_117",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[13]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_41",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[14]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_120",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[1]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_121",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[2]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_116",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[3]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_296",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[4]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_36",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[5]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_297",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[6]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_37",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[7]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_292",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[8]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_112",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_a[9]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_40",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_ba[0]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_364",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_ba[1]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_20",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_ba[2]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_93",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_cas_n": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_361",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_ck": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_24",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_ck_n": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_25",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_cke": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_21",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_cs_n": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_365",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dm[0]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_144",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dm[1]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_205",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dm[2]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_236",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dm[3]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_265",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[0]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_161",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_161",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[10]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_169",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_169",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[11]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_201",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_201",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[12]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_172",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_172",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[13]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_204",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_204",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[14]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_208",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_208",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[15]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_209",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_209",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[16]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_232",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_232",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[17]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_237",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_237",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[18]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_240",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_240",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[19]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_217",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_217",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[1]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_160",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_160",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[20]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_233",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_233",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[21]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_216",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_216",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[22]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_241",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_241",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[23]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_213",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_213",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[24]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_284",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_284",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[25]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_269",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_269",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[26]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_288",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_288",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[27]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_268",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_268",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[28]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_285",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_285",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[29]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_261",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_261",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[2]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_164",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_164",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[30]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_260",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_260",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[31]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_264",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_264",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[3]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_140",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_140",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[4]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_165",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_165",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[5]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_141",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_141",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[6]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_136",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_136",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[7]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_145",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_145",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[8]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_173",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_173",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dq[9]": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_0_200",
+        "terminal": "I",
+        "iostandard": "HSTL15_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_200",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_dqs[0]": [
+      {
+        "type": "V_IBUFDS",
+        "site": "IOBS_LR_0_148",
+        "terminal": "I",
+        "iostandard": "HSTL15D_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_148",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_dqs[1]": [
+      {
+        "type": "V_IBUFDS",
+        "site": "IOBS_LR_0_176",
+        "terminal": "I",
+        "iostandard": "HSTL15D_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_176",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_dqs[2]": [
+      {
+        "type": "V_IBUFDS",
+        "site": "IOBS_LR_0_228",
+        "terminal": "I",
+        "iostandard": "HSTL15D_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_228",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_dqs[3]": [
+      {
+        "type": "V_IBUFDS",
+        "site": "IOBS_LR_0_272",
+        "terminal": "I",
+        "iostandard": "HSTL15D_I"
+      },
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_272",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_dqs_n[0]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_149",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_dqs_n[1]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_177",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_dqs_n[2]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_229",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_dqs_n[3]": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_273",
+        "terminal": "O",
+        "iostandard": "HSTL15D_I"
+      }
+    ],
+    "mem_odt": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_357",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_ras_n": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_360",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_rst_n": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBS_LR_0_368",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "mem_we_n": [
+      {
+        "type": "V_OBUFT",
+        "site": "IOBS_LR_0_356",
+        "terminal": "O",
+        "iostandard": "HSTL15_I"
+      }
+    ],
+    "sys_clk": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_LR_328_209",
+        "terminal": "I",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "uart_rx": [
+      {
+        "type": "V_IBUF",
+        "site": "IOBS_TB_40_0",
+        "terminal": "I",
+        "iostandard": "LVCMOS33"
+      }
+    ],
+    "uart_tx": [
+      {
+        "type": "V_OBUF",
+        "site": "IOBD_41_0",
+        "terminal": "O",
+        "iostandard": "LVCMOS33"
+      }
+    ]
+  }
+}

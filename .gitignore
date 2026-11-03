@@ -1,0 +1,17 @@
+# Local builds, personal configuration and private hardware
+__pycache__/
+*.py[cod]
+.build/
+build/
+dist/
+.env
+.env.*
+*.lic
+*.key
+ip/
+demo/hardware/build_src/ip/
+demo/prebuilt/
+*.sbit
+*.sfc
+.claude/
+.codex/

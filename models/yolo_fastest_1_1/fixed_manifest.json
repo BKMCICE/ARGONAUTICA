@@ -1,0 +1,2619 @@
+{
+  "activation_sha256": "03f21ef3a9236e129e77e7620c5c4cf13edc9d6d5828145ba92e33674af10d66",
+  "weights_sha256": "7df8198f4c17da55db55228aad679bb2e5169b5252130578e4bd452cbea4df47",
+  "params_q24_sha256": "8f49c266352ef99efc9035fd88bb0f45b645fbf7ebdd49ef9fadd16c6965d3e1",
+  "params_q24_bytes": 57136,
+  "q_fractional_bits": 24,
+  "layers": [
+    {
+      "index": 0,
+      "type": "convolutional",
+      "input": [
+        320,
+        320,
+        3
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "weight_offset": 0,
+      "weight_bytes": 216,
+      "param_offset": 0,
+      "output_channels": 8,
+      "input_channels_per_group": 3,
+      "kernel_size": 3,
+      "groups": 1,
+      "stride": 2,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 1,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "weight_offset": 216,
+      "weight_bytes": 64,
+      "param_offset": 64,
+      "output_channels": 8,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 2,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "weight_offset": 280,
+      "weight_bytes": 72,
+      "param_offset": 128,
+      "output_channels": 8,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 8,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 3,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        4
+      ],
+      "weight_offset": 352,
+      "weight_bytes": 32,
+      "param_offset": 192,
+      "output_channels": 4,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 4,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        4
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "weight_offset": 384,
+      "weight_bytes": 32,
+      "param_offset": 224,
+      "output_channels": 8,
+      "input_channels_per_group": 4,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 5,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "weight_offset": 416,
+      "weight_bytes": 72,
+      "param_offset": 288,
+      "output_channels": 8,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 8,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 6,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        4
+      ],
+      "weight_offset": 488,
+      "weight_bytes": 32,
+      "param_offset": 352,
+      "output_channels": 4,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 7,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        160,
+        160,
+        4
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 8,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        160,
+        160,
+        4
+      ],
+      "source": 3,
+      "previous_q24": 18609835,
+      "source_q24": 12166146
+    },
+    {
+      "index": 9,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        4
+      ],
+      "shape": [
+        160,
+        160,
+        24
+      ],
+      "weight_offset": 520,
+      "weight_bytes": 96,
+      "param_offset": 384,
+      "output_channels": 24,
+      "input_channels_per_group": 4,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 10,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        24
+      ],
+      "shape": [
+        80,
+        80,
+        24
+      ],
+      "weight_offset": 616,
+      "weight_bytes": 216,
+      "param_offset": 576,
+      "output_channels": 24,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 24,
+      "stride": 2,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 11,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        24
+      ],
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "weight_offset": 832,
+      "weight_bytes": 192,
+      "param_offset": 768,
+      "output_channels": 8,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 12,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        8
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "weight_offset": 1024,
+      "weight_bytes": 256,
+      "param_offset": 832,
+      "output_channels": 32,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 13,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "weight_offset": 1280,
+      "weight_bytes": 288,
+      "param_offset": 1088,
+      "output_channels": 32,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 32,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 14,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "weight_offset": 1568,
+      "weight_bytes": 256,
+      "param_offset": 1344,
+      "output_channels": 8,
+      "input_channels_per_group": 32,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 15,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 16,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "source": 11,
+      "previous_q24": 5526711,
+      "source_q24": 16276457
+    },
+    {
+      "index": 17,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        8
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "weight_offset": 1824,
+      "weight_bytes": 256,
+      "param_offset": 1408,
+      "output_channels": 32,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 18,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "weight_offset": 2080,
+      "weight_bytes": 288,
+      "param_offset": 1664,
+      "output_channels": 32,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 32,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 19,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "weight_offset": 2368,
+      "weight_bytes": 256,
+      "param_offset": 1920,
+      "output_channels": 8,
+      "input_channels_per_group": 32,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 20,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 21,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "source": 16,
+      "previous_q24": 7976437,
+      "source_q24": 15407858
+    },
+    {
+      "index": 22,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        8
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "weight_offset": 2624,
+      "weight_bytes": 256,
+      "param_offset": 1984,
+      "output_channels": 32,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 23,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        40,
+        40,
+        32
+      ],
+      "weight_offset": 2880,
+      "weight_bytes": 288,
+      "param_offset": 2240,
+      "output_channels": 32,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 32,
+      "stride": 2,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 24,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        32
+      ],
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "weight_offset": 3168,
+      "weight_bytes": 256,
+      "param_offset": 2496,
+      "output_channels": 8,
+      "input_channels_per_group": 32,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 25,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        8
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "weight_offset": 3424,
+      "weight_bytes": 384,
+      "param_offset": 2560,
+      "output_channels": 48,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 26,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "weight_offset": 3808,
+      "weight_bytes": 432,
+      "param_offset": 2944,
+      "output_channels": 48,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 48,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 27,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "weight_offset": 4240,
+      "weight_bytes": 384,
+      "param_offset": 3328,
+      "output_channels": 8,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 28,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 29,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "source": 24,
+      "previous_q24": 2387301,
+      "source_q24": 17044882
+    },
+    {
+      "index": 30,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        8
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "weight_offset": 4624,
+      "weight_bytes": 384,
+      "param_offset": 3392,
+      "output_channels": 48,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 31,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "weight_offset": 5008,
+      "weight_bytes": 432,
+      "param_offset": 3776,
+      "output_channels": 48,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 48,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 32,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "weight_offset": 5440,
+      "weight_bytes": 384,
+      "param_offset": 4160,
+      "output_channels": 8,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 33,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 34,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "source": 29,
+      "previous_q24": 1505982,
+      "source_q24": 16113326
+    },
+    {
+      "index": 35,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        8
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "weight_offset": 5824,
+      "weight_bytes": 384,
+      "param_offset": 4224,
+      "output_channels": 48,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 36,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "weight_offset": 6208,
+      "weight_bytes": 432,
+      "param_offset": 4608,
+      "output_channels": 48,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 48,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 37,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "weight_offset": 6640,
+      "weight_bytes": 768,
+      "param_offset": 4992,
+      "output_channels": 16,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 38,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 7408,
+      "weight_bytes": 1536,
+      "param_offset": 5120,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 39,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 8944,
+      "weight_bytes": 864,
+      "param_offset": 5888,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 40,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "weight_offset": 9808,
+      "weight_bytes": 1536,
+      "param_offset": 6656,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 41,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 42,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "source": 37,
+      "previous_q24": 5797455,
+      "source_q24": 15847054
+    },
+    {
+      "index": 43,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 11344,
+      "weight_bytes": 1536,
+      "param_offset": 6784,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 44,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 12880,
+      "weight_bytes": 864,
+      "param_offset": 7552,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 45,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "weight_offset": 13744,
+      "weight_bytes": 1536,
+      "param_offset": 8320,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 46,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 47,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "source": 42,
+      "previous_q24": 4167676,
+      "source_q24": 13082514
+    },
+    {
+      "index": 48,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 15280,
+      "weight_bytes": 1536,
+      "param_offset": 8448,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 49,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 16816,
+      "weight_bytes": 864,
+      "param_offset": 9216,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 50,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "weight_offset": 17680,
+      "weight_bytes": 1536,
+      "param_offset": 9984,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 51,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 52,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "source": 47,
+      "previous_q24": 4855677,
+      "source_q24": 15096585
+    },
+    {
+      "index": 53,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 19216,
+      "weight_bytes": 1536,
+      "param_offset": 10112,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 54,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 20752,
+      "weight_bytes": 864,
+      "param_offset": 10880,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 55,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "weight_offset": 21616,
+      "weight_bytes": 1536,
+      "param_offset": 11648,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 56,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 57,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "source": 52,
+      "previous_q24": 4499728,
+      "source_q24": 14859479
+    },
+    {
+      "index": 58,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "weight_offset": 23152,
+      "weight_bytes": 1536,
+      "param_offset": 11776,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 59,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        20,
+        20,
+        96
+      ],
+      "weight_offset": 24688,
+      "weight_bytes": 864,
+      "param_offset": 12544,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96,
+      "stride": 2,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 60,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        96
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "weight_offset": 25552,
+      "weight_bytes": 2304,
+      "param_offset": 13312,
+      "output_channels": 24,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 61,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 27856,
+      "weight_bytes": 3264,
+      "param_offset": 13504,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 62,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 31120,
+      "weight_bytes": 1224,
+      "param_offset": 14592,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 63,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "weight_offset": 32344,
+      "weight_bytes": 3264,
+      "param_offset": 15680,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 64,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 65,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "source": 60,
+      "previous_q24": 7969581,
+      "source_q24": 16866751
+    },
+    {
+      "index": 66,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 35608,
+      "weight_bytes": 3264,
+      "param_offset": 15872,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 67,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 38872,
+      "weight_bytes": 1224,
+      "param_offset": 16960,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 68,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "weight_offset": 40096,
+      "weight_bytes": 3264,
+      "param_offset": 18048,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 69,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 70,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "source": 65,
+      "previous_q24": 5345518,
+      "source_q24": 16228493
+    },
+    {
+      "index": 71,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 43360,
+      "weight_bytes": 3264,
+      "param_offset": 18240,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 72,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 46624,
+      "weight_bytes": 1224,
+      "param_offset": 19328,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 73,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "weight_offset": 47848,
+      "weight_bytes": 3264,
+      "param_offset": 20416,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 74,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 75,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "source": 70,
+      "previous_q24": 4843161,
+      "source_q24": 16545649
+    },
+    {
+      "index": 76,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 51112,
+      "weight_bytes": 3264,
+      "param_offset": 20608,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 77,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 54376,
+      "weight_bytes": 1224,
+      "param_offset": 21696,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 78,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "weight_offset": 55600,
+      "weight_bytes": 3264,
+      "param_offset": 22784,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 79,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 80,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "source": 75,
+      "previous_q24": 4801174,
+      "source_q24": 18465654
+    },
+    {
+      "index": 81,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "weight_offset": 58864,
+      "weight_bytes": 3264,
+      "param_offset": 22976,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 82,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        10,
+        10,
+        136
+      ],
+      "weight_offset": 62128,
+      "weight_bytes": 1224,
+      "param_offset": 24064,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136,
+      "stride": 2,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 83,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        136
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "weight_offset": 63352,
+      "weight_bytes": 6528,
+      "param_offset": 25152,
+      "output_channels": 48,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 84,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 69880,
+      "weight_bytes": 10752,
+      "param_offset": 25536,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 85,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 80632,
+      "weight_bytes": 2016,
+      "param_offset": 27328,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 86,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "weight_offset": 82648,
+      "weight_bytes": 10752,
+      "param_offset": 29120,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 87,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 88,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "source": 83,
+      "previous_q24": 7062441,
+      "source_q24": 16598770
+    },
+    {
+      "index": 89,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 93400,
+      "weight_bytes": 10752,
+      "param_offset": 29504,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 90,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 104152,
+      "weight_bytes": 2016,
+      "param_offset": 31296,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 91,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "weight_offset": 106168,
+      "weight_bytes": 10752,
+      "param_offset": 33088,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 92,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 93,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "source": 88,
+      "previous_q24": 6325169,
+      "source_q24": 13421466
+    },
+    {
+      "index": 94,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 116920,
+      "weight_bytes": 10752,
+      "param_offset": 33472,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 95,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 127672,
+      "weight_bytes": 2016,
+      "param_offset": 35264,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 96,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "weight_offset": 129688,
+      "weight_bytes": 10752,
+      "param_offset": 37056,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 97,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 98,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "source": 93,
+      "previous_q24": 10585489,
+      "source_q24": 11964194
+    },
+    {
+      "index": 99,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 140440,
+      "weight_bytes": 10752,
+      "param_offset": 37440,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 100,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 151192,
+      "weight_bytes": 2016,
+      "param_offset": 39232,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 101,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "weight_offset": 153208,
+      "weight_bytes": 10752,
+      "param_offset": 41024,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 102,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 103,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "source": 98,
+      "previous_q24": 10835230,
+      "source_q24": 9333409
+    },
+    {
+      "index": 104,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 163960,
+      "weight_bytes": 10752,
+      "param_offset": 41408,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 105,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "weight_offset": 174712,
+      "weight_bytes": 2016,
+      "param_offset": 43200,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 1
+    },
+    {
+      "index": 106,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "weight_offset": 176728,
+      "weight_bytes": 10752,
+      "param_offset": 44992,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 107,
+      "type": "dropout",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 108,
+      "type": "shortcut",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "source": 103,
+      "previous_q24": 8358445,
+      "source_q24": 10182500
+    },
+    {
+      "index": 109,
+      "type": "maxpool",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 29567173,
+      "size": 3,
+      "stride": 1
+    },
+    {
+      "index": 110,
+      "type": "route",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "sources": [
+        108
+      ],
+      "source_q24": [
+        16777216
+      ]
+    },
+    {
+      "index": 111,
+      "type": "maxpool",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 29567173,
+      "size": 5,
+      "stride": 1
+    },
+    {
+      "index": 112,
+      "type": "route",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "sources": [
+        108
+      ],
+      "source_q24": [
+        16777216
+      ]
+    },
+    {
+      "index": 113,
+      "type": "maxpool",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "previous_q24": 29567173,
+      "size": 9,
+      "stride": 1
+    },
+    {
+      "index": 114,
+      "type": "route",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        192
+      ],
+      "sources": [
+        113,
+        111,
+        109,
+        108
+      ],
+      "source_q24": [
+        9519848,
+        9519848,
+        9519848,
+        16777216
+      ]
+    },
+    {
+      "index": 115,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        192
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "weight_offset": 187480,
+      "weight_bytes": 18432,
+      "param_offset": 45376,
+      "output_channels": 96,
+      "input_channels_per_group": 192,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 0
+    },
+    {
+      "index": 116,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "weight_offset": 205912,
+      "weight_bytes": 2400,
+      "param_offset": 46144,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 96,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 2
+    },
+    {
+      "index": 117,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "weight_offset": 208312,
+      "weight_bytes": 9216,
+      "param_offset": 46912,
+      "output_channels": 96,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 118,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "weight_offset": 217528,
+      "weight_bytes": 2400,
+      "param_offset": 47680,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 96,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 2
+    },
+    {
+      "index": 119,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "weight_offset": 219928,
+      "weight_bytes": 9216,
+      "param_offset": 48448,
+      "output_channels": 96,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 120,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        255
+      ],
+      "weight_offset": 229144,
+      "weight_bytes": 24480,
+      "param_offset": 49216,
+      "output_channels": 255,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 121,
+      "type": "yolo",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        255
+      ],
+      "previous_q24": 16777216
+    },
+    {
+      "index": 122,
+      "type": "route",
+      "input": null,
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "sources": [
+        115
+      ],
+      "source_q24": [
+        16777216
+      ]
+    },
+    {
+      "index": 123,
+      "type": "upsample",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        96
+      ],
+      "previous_q24": 16777216,
+      "size": 2,
+      "stride": 2
+    },
+    {
+      "index": 124,
+      "type": "route",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "sources": [
+        123,
+        80
+      ],
+      "source_q24": [
+        5234404,
+        16777216
+      ]
+    },
+    {
+      "index": 125,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "weight_offset": 253624,
+      "weight_bytes": 3000,
+      "param_offset": 51256,
+      "output_channels": 120,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 120,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 2
+    },
+    {
+      "index": 126,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "weight_offset": 256624,
+      "weight_bytes": 14400,
+      "param_offset": 52216,
+      "output_channels": 120,
+      "input_channels_per_group": 120,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 127,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "weight_offset": 271024,
+      "weight_bytes": 3000,
+      "param_offset": 53176,
+      "output_channels": 120,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 120,
+      "stride": 1,
+      "activation": "leaky",
+      "padding": 2
+    },
+    {
+      "index": 128,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "weight_offset": 274024,
+      "weight_bytes": 14400,
+      "param_offset": 54136,
+      "output_channels": 120,
+      "input_channels_per_group": 120,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 129,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        255
+      ],
+      "weight_offset": 288424,
+      "weight_bytes": 30600,
+      "param_offset": 55096,
+      "output_channels": 255,
+      "input_channels_per_group": 120,
+      "kernel_size": 1,
+      "groups": 1,
+      "stride": 1,
+      "activation": "linear",
+      "padding": 0
+    },
+    {
+      "index": 130,
+      "type": "yolo",
+      "input": null,
+      "shape": [
+        20,
+        20,
+        255
+      ],
+      "previous_q24": 16777216
+    }
+  ]
+}

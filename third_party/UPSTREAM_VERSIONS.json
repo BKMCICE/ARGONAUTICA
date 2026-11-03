@@ -1,0 +1,21 @@
+{
+  "result": "EXPANDED_UPSTREAM_SOURCES",
+  "modules": [
+    {
+      "path": "third_party/coremark",
+      "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+      "tree": "ecd50ebbf9e161f60bde06983fd3a0a24fa566be"
+    },
+    {
+      "path": "third_party/riscv-tests",
+      "commit": "d44511022b356a341a2430cfd65f894b77c35f36",
+      "tree": "39283c3973deb72ac6044854a053a4a2adf551d6"
+    },
+    {
+      "path": "third_party/riscv-tests/env",
+      "commit": "6de71edb142be36319e380ce782c3d1830c65d68",
+      "tree": "a28a845f0c738a33db0a90215d5705c65d134411"
+    }
+  ],
+  "scope": "Regular source files with original licenses, including four materialized in-tree source links; no upstream Git metadata copied."
+}

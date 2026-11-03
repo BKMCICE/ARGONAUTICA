@@ -1,0 +1,462 @@
+{
+  "result": "PUBLIC_DEMO_SOFTWARE_SOURCE_IDENTITIES",
+  "files": {
+    "software/source_snapshot/docs/current_board_configuration.json": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/docs/current_board_configuration.json",
+      "original_bytes_retained": true,
+      "bytes": 47557,
+      "sha256": "E1755602A44E9A1BF854457EC87C4E18F0F680B3533D2A00F3BD5EC18761BB18"
+    },
+    "software/source_snapshot/docs/validation/20261025-a97-pool-separable-production/graph/host_summary.json": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/docs/validation/20261025-a97-pool-separable-production/graph/host_summary.json",
+      "original_bytes_retained": true,
+      "bytes": 792105,
+      "sha256": "933763D38A05162449A823A6FB19E332CBEF6408BBD93ED38B7B5A3B1DADA9B7"
+    },
+    "software/source_snapshot/models/yolo_fastest_1_1/activation_scales_2img.json": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/models/yolo_fastest_1_1/activation_scales_2img.json",
+      "original_bytes_retained": true,
+      "bytes": 3586,
+      "sha256": "03F21EF3A9236E129E77E7620C5C4CF13EDC9D6D5828145BA92E33674AF10D66"
+    },
+    "software/source_snapshot/models/yolo_fastest_1_1/dog_chw_int8.bin": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/models/yolo_fastest_1_1/dog_chw_int8.bin",
+      "original_bytes_retained": true,
+      "bytes": 307200,
+      "sha256": "9B071F39DCB2D6108D6A94B03284951F4FE75CDC9DCA9B7EDAFD02F873B73364"
+    },
+    "software/source_snapshot/models/yolo_fastest_1_1/fixed_manifest.json": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/models/yolo_fastest_1_1/fixed_manifest.json",
+      "original_bytes_retained": true,
+      "bytes": 50138,
+      "sha256": "DD9C85645869736D263207557291B34F1E7BEA86792494FF273411A8518AA41F"
+    },
+    "software/source_snapshot/models/yolo_fastest_1_1/params_q24.bin": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/models/yolo_fastest_1_1/params_q24.bin",
+      "original_bytes_retained": true,
+      "bytes": 57136,
+      "sha256": "8F49C266352EF99EFC9035FD88BB0F45B645FBF7EBDD49EF9FADD16C6965D3E1"
+    },
+    "software/source_snapshot/models/yolo_fastest_1_1/weights_int8.bin": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/models/yolo_fastest_1_1/weights_int8.bin",
+      "original_bytes_retained": true,
+      "bytes": 319024,
+      "sha256": "7DF8198F4C17DA55DB55228AAD679BB2E5169B5252130578E4BD452CBEA4DF47"
+    },
+    "software/source_snapshot/sw/common/ai_mac.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/ai_mac.h",
+      "original_bytes_retained": true,
+      "bytes": 3691,
+      "sha256": "F9C605400260A6B336BF4A97C7D09DFF5E67653EC46E7D43C4718043C38F59D7"
+    },
+    "software/source_snapshot/sw/common/ai_mac_block.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/ai_mac_block.h",
+      "original_bytes_retained": true,
+      "bytes": 3355,
+      "sha256": "D91A416D5E1BCC46FF796E4DFF722743B51AE1A4AB7D39FC97BDA1388688A853"
+    },
+    "software/source_snapshot/sw/common/ai_mac_dw3x3.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/ai_mac_dw3x3.h",
+      "original_bytes_retained": true,
+      "bytes": 2518,
+      "sha256": "0D8C2E48DEE1B51BD5C0B559073C99C7AED6F873F77E9A4711E4A115E70DA73B"
+    },
+    "software/source_snapshot/sw/common/ai_mac_input_tile.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/ai_mac_input_tile.h",
+      "original_bytes_retained": true,
+      "bytes": 2003,
+      "sha256": "BD75659CAB2A42A77FB9717EE57734FFB21A140DE3808827C637DB825BD57E6C"
+    },
+    "software/source_snapshot/sw/common/ai_mac_prepack.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/ai_mac_prepack.h",
+      "original_bytes_retained": true,
+      "bytes": 1097,
+      "sha256": "4B22FFBF220F3443ACA96809410EE06BABBE5AC238522AA1801FE2C9353F6868"
+    },
+    "software/source_snapshot/sw/common/ai_mac_reuse.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/ai_mac_reuse.h",
+      "original_bytes_retained": true,
+      "bytes": 2830,
+      "sha256": "4FB5AA68FA9965DE4B7112B8A609C24689887A9EC9EED73E2CACD803AAF3B42A"
+    },
+    "software/source_snapshot/sw/common/ai_mac_tile.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/ai_mac_tile.h",
+      "original_bytes_retained": true,
+      "bytes": 506,
+      "sha256": "D26505A87A5E9063F09F77D0E0549AC520911E80A836BF46158DF35DD9D0D990"
+    },
+    "software/source_snapshot/sw/common/crt0.S": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/crt0.S",
+      "original_bytes_retained": true,
+      "bytes": 3952,
+      "sha256": "53B0D9CDF8EB626A019C78C8D95EED26F88E435D77F9747C695BC9F7C20A715C"
+    },
+    "software/source_snapshot/sw/common/int8_shortcut_lut.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/int8_shortcut_lut.h",
+      "original_bytes_retained": true,
+      "bytes": 1419,
+      "sha256": "AF9FC3731099CD333A621D76B23EF59328BABF851D70D74A00D5F520EDB48948"
+    },
+    "software/source_snapshot/sw/common/soc.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/soc.h",
+      "original_bytes_retained": true,
+      "bytes": 3598,
+      "sha256": "6BB7343695D08081C960DAA1B33ABF859F18B1575028253FAD5CCD32ADBAAFE0"
+    },
+    "software/source_snapshot/sw/common/stack_probe.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/stack_probe.c",
+      "original_bytes_retained": true,
+      "bytes": 1315,
+      "sha256": "2325A39D4F6682E7BC23ABF1A48DF85EFCA79A133413FC942A2FDCCC3990818F"
+    },
+    "software/source_snapshot/sw/common/stack_probe.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/stack_probe.h",
+      "original_bytes_retained": true,
+      "bytes": 625,
+      "sha256": "5ED92B51FCDA159AB9C3FAF48FF2B53AF386512FBB2F7BF137C368EB4EA5E81A"
+    },
+    "software/source_snapshot/sw/common/tcm_stack.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/tcm_stack.c",
+      "original_bytes_retained": true,
+      "bytes": 1667,
+      "sha256": "B5190C6BF49D570CF2C9D864F4EDB3F1105BD732F46DB02389FEED7F05343FC9"
+    },
+    "software/source_snapshot/sw/common/tcm_text.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/tcm_text.c",
+      "original_bytes_retained": true,
+      "bytes": 1232,
+      "sha256": "67854FB1B36C5F173386089A16EAA8CA54DD68D7094C0CE0F8CCE07120ACD9FD"
+    },
+    "software/source_snapshot/sw/common/uart.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/common/uart.c",
+      "original_bytes_retained": true,
+      "bytes": 1456,
+      "sha256": "6242D1A5CDA72C15DEEABAA78C1E6A3B258283C6D052390BF41212D6F9812DB3"
+    },
+    "software/source_snapshot/sw/yolo_fixed/block_input_cache.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/block_input_cache.h",
+      "original_bytes_retained": true,
+      "bytes": 1890,
+      "sha256": "7855484F2D34D6C9803C881C0A366ACCCECF240AC58233404B6CBE1CB2A0C3AE"
+    },
+    "software/source_snapshot/sw/yolo_fixed/block_post8.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/block_post8.h",
+      "original_bytes_retained": true,
+      "bytes": 1000,
+      "sha256": "D67608CDEBD7BEC44DE6F266245BE57A0F1B8E81A6E711DF9DFB1CE03B138025"
+    },
+    "software/source_snapshot/sw/yolo_fixed/block_profile.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/block_profile.h",
+      "original_bytes_retained": true,
+      "bytes": 3575,
+      "sha256": "66798DD96052D8579BECD1838B8EEEFB9021479A2E622FCA00BFDB21AE842131"
+    },
+    "software/source_snapshot/sw/yolo_fixed/block_q24_reuse.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/block_q24_reuse.h",
+      "original_bytes_retained": true,
+      "bytes": 962,
+      "sha256": "88B07051D847CBEA73775D55209757C9FA7B7EAD93749BFB7F36B371C3C02B2B"
+    },
+    "software/source_snapshot/sw/yolo_fixed/cache_pack4.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/cache_pack4.h",
+      "original_bytes_retained": true,
+      "bytes": 2247,
+      "sha256": "0A6497F659814B01A81FE61BE937D28393882DED7E98BFC59F98C193A42ABDAC"
+    },
+    "software/source_snapshot/sw/yolo_fixed/dw3_leaky_clip.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/dw3_leaky_clip.h",
+      "original_bytes_retained": true,
+      "bytes": 754,
+      "sha256": "332A80C060AB58112780C556B1B20500AE65A0E2DB238FF094E2CB51C6A364BB"
+    },
+    "software/source_snapshot/sw/yolo_fixed/dw3x3_rolling.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/dw3x3_rolling.h",
+      "original_bytes_retained": true,
+      "bytes": 4917,
+      "sha256": "250C17E3BB4AF2AEA6ED55A7C3CAFEDA199B69604DC4AF1C050C23E963364C49"
+    },
+    "software/source_snapshot/sw/yolo_fixed/dw5_pack_fast.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/dw5_pack_fast.h",
+      "original_bytes_retained": true,
+      "bytes": 1780,
+      "sha256": "15642C8A305DEE2F8B7D07CD168EF6BCC4B0F02A6B14E410D1B37891AFBC1DEB"
+    },
+    "software/source_snapshot/sw/yolo_fixed/dw5x5_block.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/dw5x5_block.h",
+      "original_bytes_retained": true,
+      "bytes": 6104,
+      "sha256": "E2818786219E1CCCBB4834FECE88A095A4E8B6FDCDD510CDFF65DCEFE9C37E09"
+    },
+    "software/source_snapshot/sw/yolo_fixed/host_uart.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/host_uart.c",
+      "original_bytes_retained": true,
+      "bytes": 795,
+      "sha256": "2B95CD8A1E137F7BDE2E2EDC385BA3C2D02DDCF3FDE44DDB9F57B6C7B5B0C9D7"
+    },
+    "software/source_snapshot/sw/yolo_fixed/layer_cache.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/layer_cache.h",
+      "original_bytes_retained": true,
+      "bytes": 1272,
+      "sha256": "964A2CC2031367981D99D3400DC8C7F2BCF69E2A3E82AB069CBF631306A9D10A"
+    },
+    "software/source_snapshot/sw/yolo_fixed/main.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/main.c",
+      "original_bytes_retained": true,
+      "bytes": 53692,
+      "sha256": "E6D4DC9F76BCD11E645ECE677DC8AE3517116E9F2704502E0A679F8BF55743B5"
+    },
+    "software/source_snapshot/sw/yolo_fixed/model_arena.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/model_arena.h",
+      "original_bytes_retained": true,
+      "bytes": 1372,
+      "sha256": "A145B17ED40D6E64D73AFFAF42990359E24617331EA7E2C3DAB39742A08D9038"
+    },
+    "software/source_snapshot/sw/yolo_fixed/model_data.S": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/model_data.S",
+      "original_bytes_retained": true,
+      "bytes": 574,
+      "sha256": "DC93C8DB39161051245F0B4B7B46E2B61AF888089810A3DF677BFE90F0DC0B12"
+    },
+    "software/source_snapshot/sw/yolo_fixed/model_graph.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/model_graph.h",
+      "original_bytes_retained": true,
+      "bytes": 17155,
+      "sha256": "5FFA4A922931E209B33D24DD813ACA53169C65091AB713EB2E3A31BE56432FFF"
+    },
+    "software/source_snapshot/sw/yolo_fixed/model_identity_arena.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/model_identity_arena.h",
+      "original_bytes_retained": true,
+      "bytes": 1533,
+      "sha256": "53839EE13D66CF4815833E5906843B5E8B8BA5D59520C1C32A1512AA18DC8A6D"
+    },
+    "software/source_snapshot/sw/yolo_fixed/pool_separable.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/pool_separable.h",
+      "original_bytes_retained": true,
+      "bytes": 1921,
+      "sha256": "291E9D7679F67B545F6EE043AF95B2A077A561C430C20D924AB6F140DFC321A7"
+    },
+    "software/source_snapshot/sw/yolo_fixed/post8_word_store.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/post8_word_store.h",
+      "original_bytes_retained": true,
+      "bytes": 669,
+      "sha256": "1E0D4A438F47521E79A92F126F9F84C6970145A38D70EF8AE51155730C7A81AA"
+    },
+    "software/source_snapshot/sw/yolo_fixed/postprocess.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/postprocess.c",
+      "original_bytes_retained": true,
+      "bytes": 5832,
+      "sha256": "113EBA82CB991B6D3E08582499F4E5309A32B04E2D45A03E0C5AB74F18AC6690"
+    },
+    "software/source_snapshot/sw/yolo_fixed/postprocess_lut.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/postprocess_lut.h",
+      "original_bytes_retained": true,
+      "bytes": 8464,
+      "sha256": "A1DEEC10E5D62FE93FACA450526F06479E671DD43B5EE661CB25E020CB80D567"
+    },
+    "software/source_snapshot/sw/yolo_fixed/rgb3_block.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/sw/yolo_fixed/rgb3_block.h",
+      "original_bytes_retained": true,
+      "bytes": 4826,
+      "sha256": "B60AFDADA9E0CC3CA6626864976D79FEB6B369649F6362B36B1C722778AB0779"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_frame/capture_layout.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_frame/capture_layout.h",
+      "original_bytes_retained": true,
+      "bytes": 689,
+      "sha256": "72B5A232D838B11FA22E4125B58A5678B3659BC3A50DD93F9F4F218C7CEFF902"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_frame/contract.py": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_frame/contract.py",
+      "original_bytes_retained": true,
+      "bytes": 5382,
+      "sha256": "834D1C7DF0E488425BA41FF81F5CAA13042B445A3B33F909E2E47DF9B3E7FC19"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_model_capture/raw_capture_probe.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_model_capture/raw_capture_probe.c",
+      "original_bytes_retained": true,
+      "bytes": 12673,
+      "sha256": "D814B42115FF066A2BF67B9FA97AD84D4B95F4AA90516DC25126C246CC912547"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_yolo_integrated/build_integrated.py": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_yolo_integrated/build_integrated.py",
+      "original_bytes_retained": true,
+      "bytes": 11718,
+      "sha256": "B120D901ECC07F90CACE104C7E73E7E0326DFBC93C2F8061E56C7E430E370441"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_yolo_integrated/link_integrated.ld": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_yolo_integrated/link_integrated.ld",
+      "original_bytes_retained": true,
+      "bytes": 2007,
+      "sha256": "9353218EA5FD1501863E858AECF59CB2F99892399CA1B4C110E4589D16F83B28"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_yolo_integrated/pipeline.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_yolo_integrated/pipeline.c",
+      "original_bytes_retained": true,
+      "bytes": 16318,
+      "sha256": "876555F07F22A34FBAD497335CB3F636E7EB30B880ECB0870E5D5E4E781A0279"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_yolo_integrated/quantize.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_yolo_integrated/quantize.c",
+      "original_bytes_retained": true,
+      "bytes": 436,
+      "sha256": "F1F5A9807E9D5A90CBD071379E96C560E543B9FB9BF816FB57A9E749436DAACB"
+    },
+    "software/source_snapshot/tools/board_diag/hdmi_yolo_integrated/quantize.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/board_diag/hdmi_yolo_integrated/quantize.h",
+      "original_bytes_retained": true,
+      "bytes": 243,
+      "sha256": "CC00B07CB8886AD43EE43D28644917993D98668FA81A3851D1FAE35C64F61335"
+    },
+    "software/source_snapshot/tools/check_tcm_image.py": {
+      "origin": "h20/work/firmware/demo_attempt_02/source_snapshot/tools/check_tcm_image.py",
+      "original_bytes_retained": true,
+      "bytes": 5928,
+      "sha256": "D603B7D591FFDC00574E08DFC35820BD02EF34586ACA38E3C322E914D3037D25"
+    },
+    "software/generated/crt0.S": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/crt0.S",
+      "original_bytes_retained": true,
+      "bytes": 3838,
+      "sha256": "C82257A77AAAB30EC53FF954A551A63B54A4BABB954EC0EA5C0E7B8CA8C10968"
+    },
+    "software/generated/derivation.json": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/derivation.json",
+      "original_bytes_retained": true,
+      "bytes": 6037,
+      "sha256": "D44071296C91AB34EB0DB91A9FED0BC0723504D3F69D73F088FC994B886C2202"
+    },
+    "software/generated/h20_host.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/h20_host.h",
+      "original_bytes_retained": true,
+      "bytes": 818,
+      "sha256": "13D67B4FAFF17E4EA04294CDF1115917DC523743835780DBA08BCFF6AED23BBE"
+    },
+    "software/generated/loop.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/loop.c",
+      "original_bytes_retained": true,
+      "bytes": 2952,
+      "sha256": "7D41B6728F6DE0C034A77F95315175181A99E02F7A4190067F347C6541D1B9D9"
+    },
+    "software/generated/main.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/main.c",
+      "original_bytes_retained": true,
+      "bytes": 53574,
+      "sha256": "71E2F6195586F7FE96D584BDF1322002B115F76006E61A06101CECDAC3251E1D"
+    },
+    "software/generated/pipeline.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/pipeline.c",
+      "original_bytes_retained": true,
+      "bytes": 17827,
+      "sha256": "E2C09576068929D6478B9D1042C0C41CEDEF5FAEC5A5ED6F694ACFC7C767C4CC"
+    },
+    "software/generated/postprocess.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/postprocess.c",
+      "original_bytes_retained": true,
+      "bytes": 5936,
+      "sha256": "9825305E38EEFDFB3122F944C0B72E09FD46A767CF578F6E3F7ED0A466D77061"
+    },
+    "software/generated/result_ui.c": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/result_ui.c",
+      "original_bytes_retained": true,
+      "bytes": 5287,
+      "sha256": "ACC76C4CABD6CAD9389AE155BE205FC61AA6C9C9CEB38512B37C825FFE54796F"
+    },
+    "software/generated/result_ui.h": {
+      "origin": "h20/work/firmware/demo_attempt_02/generated/result_ui.h",
+      "original_bytes_retained": true,
+      "bytes": 493,
+      "sha256": "B4DAD4CB4A896A6611F41ED90FA881B5803324E19197535D86F87DAE81E9A029"
+    },
+    "software/boot/source_snapshot/boot_flash.c": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/boot_flash.c",
+      "original_bytes_retained": true,
+      "bytes": 3160,
+      "sha256": "F5AF71E5A3D06CBEC1DC37E734DEF1FF1B2DAABE12750786579C9B291AE87306"
+    },
+    "software/boot/source_snapshot/capture_layout.h": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/capture_layout.h",
+      "original_bytes_retained": true,
+      "bytes": 689,
+      "sha256": "72B5A232D838B11FA22E4125B58A5678B3659BC3A50DD93F9F4F218C7CEFF902"
+    },
+    "software/boot/source_snapshot/crt0.S": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/crt0.S",
+      "original_bytes_retained": true,
+      "bytes": 3952,
+      "sha256": "53B0D9CDF8EB626A019C78C8D95EED26F88E435D77F9747C695BC9F7C20A715C"
+    },
+    "software/boot/source_snapshot/flash_image.c": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/flash_image.c",
+      "original_bytes_retained": true,
+      "bytes": 2227,
+      "sha256": "B11B82C0C802AB7A44A63FDFF57D8F2758170ACD38E55F53FCBD77C9603F67D6"
+    },
+    "software/boot/source_snapshot/flash_image.h": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/flash_image.h",
+      "original_bytes_retained": true,
+      "bytes": 1226,
+      "sha256": "ED5B26717370C17D4501CD437D675CD8FC7329C36FF48EB362FB79B62C1EBA32"
+    },
+    "software/boot/source_snapshot/link.ld": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/link.ld",
+      "original_bytes_retained": true,
+      "bytes": 874,
+      "sha256": "D1E4C8860ADCD066A85F17B8FC7BC7A2BF0B2936517755728E1C702A90851DB9"
+    },
+    "software/boot/source_snapshot/link_ddr.ld": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/link_ddr.ld",
+      "original_bytes_retained": true,
+      "bytes": 839,
+      "sha256": "445BD9C04249A7153E624B670E9464E4A06AEE8D3A066A569BA536F5B8E85439"
+    },
+    "software/boot/source_snapshot/platform_flash.c": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/platform_flash.c",
+      "original_bytes_retained": true,
+      "bytes": 639,
+      "sha256": "011EBCA2A1676BB2ED20CC535E97060A61216635DA8570D8A455F2411D62A85F"
+    },
+    "software/boot/source_snapshot/platform_flash.h": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/platform_flash.h",
+      "original_bytes_retained": true,
+      "bytes": 124,
+      "sha256": "29F4A1077EA72FD0C1AA2D9E2A12A18DD09D9C52514F96A001AB6AB18012C355"
+    },
+    "software/boot/source_snapshot/probe_flash.c": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/probe_flash.c",
+      "original_bytes_retained": true,
+      "bytes": 1407,
+      "sha256": "19862834856933C88757E6027CBB61C7BE6CD3CCE2CE52904A25DF26E748F91F"
+    },
+    "software/boot/source_snapshot/runtime.c": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/runtime.c",
+      "original_bytes_retained": true,
+      "bytes": 299,
+      "sha256": "8B93691C15771583B33534235C69D529E05D601A4548819068A21E3FC94DD3A8"
+    },
+    "software/boot/source_snapshot/soc.h": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/soc.h",
+      "original_bytes_retained": true,
+      "bytes": 3598,
+      "sha256": "6BB7343695D08081C960DAA1B33ABF859F18B1575028253FAD5CCD32ADBAAFE0"
+    },
+    "software/boot/source_snapshot/spi_gpio.c": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/spi_gpio.c",
+      "original_bytes_retained": true,
+      "bytes": 1904,
+      "sha256": "1DDF99F66E422B2D0F1F60B26A88B3FE60FD9576BFC733B6B5B7DB72B9217BB6"
+    },
+    "software/boot/source_snapshot/spi_gpio.h": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/spi_gpio.h",
+      "original_bytes_retained": true,
+      "bytes": 602,
+      "sha256": "7B2DDD5E6D2AA03E9F5F6CFAF83071172DC72442EBA20E864A0CA3AD9B21E226"
+    },
+    "software/boot/source_snapshot/uart.c": {
+      "origin": "h19/work/firmware/attempt_03/source_snapshot/uart.c",
+      "original_bytes_retained": true,
+      "bytes": 1456,
+      "sha256": "6242D1A5CDA72C15DEEABAA78C1E6A3B258283C6D052390BF41212D6F9812DB3"
+    }
+  },
+  "scope": "Only the original 76 software source/recipe identities. No assertion that omitted hardware IP, full board source or original hardware verification is included."
+}

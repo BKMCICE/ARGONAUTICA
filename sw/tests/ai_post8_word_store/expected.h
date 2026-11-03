@@ -1,0 +1,5 @@
+/* Independent generate_expected.py signed CHW oracle. */
+static const uint32_t a79_expected[2][8]={
+ {0xb6bdd9beu,0xfcefeb7bu,0xcfbf92e9u,0xbd587142u,0x11afadecu,0x11afadecu,0x52f7e2c3u,0xbb32924cu},
+ {0x412b6db5u,0x64b37185u,0x5e4339f5u,0xd6a49fa4u,0x271a5868u,0x271a5868u,0x52f7e2c3u,0x414666fdu}
+};

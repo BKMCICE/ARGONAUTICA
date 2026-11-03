@@ -1,0 +1,356 @@
+PROG := yolo_fixed
+YOLO_POOL_SEPARABLE ?= 0
+ifneq ($(YOLO_POOL_SEPARABLE),0)
+ifneq ($(YOLO_POOL_SEPARABLE),1)
+$(error YOLO_POOL_SEPARABLE supports only 0 or 1)
+endif
+endif
+CFLAGS += -DYOLO_POOL_SEPARABLE=$(YOLO_POOL_SEPARABLE)
+SRCS := main.c postprocess.c model_data.S
+LINK_SCRIPT := ../common/link_ddr_ai.ld
+ifeq ($(TCM_TEXT),1)
+LINK_SCRIPT := ../common/link_ddr_ai_tcm.ld
+endif
+YOLO_UART_IMAGE ?= 0
+YOLO_IDENTITY_FORWARD ?= 0
+ifneq ($(YOLO_IDENTITY_FORWARD),0)
+ifneq ($(YOLO_IDENTITY_FORWARD),1)
+$(error YOLO_IDENTITY_FORWARD supports only 0 or 1)
+endif
+ifneq ($(YOLO_REUSE_ACTIVATIONS),1)
+$(error YOLO_IDENTITY_FORWARD requires YOLO_REUSE_ACTIVATIONS=1)
+endif
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_IDENTITY_FORWARD requires YOLO_1X1_ACC32=1)
+endif
+endif
+CFLAGS += -DYOLO_IDENTITY_FORWARD=$(YOLO_IDENTITY_FORWARD)
+YOLO_IDENTITY_FASTPATH ?= 0
+ifneq ($(YOLO_IDENTITY_FASTPATH),0)
+ifneq ($(YOLO_IDENTITY_FASTPATH),1)
+$(error YOLO_IDENTITY_FASTPATH supports only 0 or 1)
+endif
+endif
+CFLAGS += -DYOLO_IDENTITY_FASTPATH=$(YOLO_IDENTITY_FASTPATH)
+YOLO_SHORTCUT_LUT ?= 0
+ifneq ($(YOLO_SHORTCUT_LUT),0)
+ifneq ($(YOLO_SHORTCUT_LUT),1)
+$(error YOLO_SHORTCUT_LUT supports only 0 or 1)
+endif
+endif
+CFLAGS += -DYOLO_SHORTCUT_LUT=$(YOLO_SHORTCUT_LUT)
+YOLO_1X1_BLOCK ?= 0
+ifneq ($(YOLO_1X1_BLOCK),0)
+ifneq ($(YOLO_1X1_BLOCK),1)
+$(error YOLO_1X1_BLOCK supports only 0 or 1)
+endif
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_1X1_BLOCK requires YOLO_1X1_ACC32=1)
+endif
+ifneq ($(YOLO_REUSE_1X1_INPUT),1)
+$(error YOLO_1X1_BLOCK requires YOLO_REUSE_1X1_INPUT=1)
+endif
+endif
+CFLAGS += -DYOLO_1X1_BLOCK=$(YOLO_1X1_BLOCK)
+YOLO_BLOCK8 ?= 0
+ifneq ($(YOLO_BLOCK8),0)
+ifneq ($(YOLO_BLOCK8),1)
+$(error YOLO_BLOCK8 supports only 0 or 1)
+endif
+ifneq ($(YOLO_1X1_BLOCK),1)
+$(error YOLO_BLOCK8 requires YOLO_1X1_BLOCK=1)
+endif
+endif
+CFLAGS += -DYOLO_BLOCK8=$(YOLO_BLOCK8)
+YOLO_BLOCK_POST8 ?= 0
+ifneq ($(YOLO_BLOCK_POST8),0)
+ifneq ($(YOLO_BLOCK_POST8),1)
+$(error YOLO_BLOCK_POST8 supports only 0 or 1)
+endif
+ifneq ($(YOLO_BLOCK8),1)
+$(error YOLO_BLOCK_POST8 requires YOLO_BLOCK8=1)
+endif
+ifneq ($(YOLO_1X1_BLOCK),1)
+$(error YOLO_BLOCK_POST8 requires YOLO_1X1_BLOCK=1)
+endif
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_BLOCK_POST8 requires YOLO_1X1_ACC32=1)
+endif
+endif
+CFLAGS += -DYOLO_BLOCK_POST8=$(YOLO_BLOCK_POST8)
+YOLO_POST8_WORD_STORE ?= 0
+ifneq ($(YOLO_POST8_WORD_STORE),0)
+ifneq ($(YOLO_POST8_WORD_STORE),1)
+$(error YOLO_POST8_WORD_STORE supports only 0 or 1)
+endif
+ifneq ($(YOLO_BLOCK_POST8),1)
+$(error YOLO_POST8_WORD_STORE requires YOLO_BLOCK_POST8=1)
+endif
+endif
+CFLAGS += -DYOLO_POST8_WORD_STORE=$(YOLO_POST8_WORD_STORE)
+YOLO_RGB3_BLOCK ?= 0
+ifneq ($(YOLO_RGB3_BLOCK),0)
+ifneq ($(YOLO_RGB3_BLOCK),1)
+$(error YOLO_RGB3_BLOCK supports only 0 or 1)
+endif
+ifneq ($(YOLO_3X3_INPUT3_PREPACK),1)
+$(error YOLO_RGB3_BLOCK requires YOLO_3X3_INPUT3_PREPACK=1)
+endif
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_RGB3_BLOCK requires YOLO_1X1_ACC32=1)
+endif
+endif
+CFLAGS += -DYOLO_RGB3_BLOCK=$(YOLO_RGB3_BLOCK)
+YOLO_BLOCK_Q24_REUSE ?= 0
+ifneq ($(YOLO_BLOCK_Q24_REUSE),0)
+ifneq ($(YOLO_BLOCK_Q24_REUSE),1)
+$(error YOLO_BLOCK_Q24_REUSE supports only 0 or 1)
+endif
+ifneq ($(YOLO_1X1_BLOCK),1)
+$(error YOLO_BLOCK_Q24_REUSE requires YOLO_1X1_BLOCK=1)
+endif
+endif
+CFLAGS += -DYOLO_BLOCK_Q24_REUSE=$(YOLO_BLOCK_Q24_REUSE)
+YOLO_DW3X3_ROLLING ?= 0
+ifneq ($(YOLO_DW3X3_ROLLING),0)
+ifneq ($(YOLO_DW3X3_ROLLING),1)
+$(error YOLO_DW3X3_ROLLING supports only 0 or 1)
+endif
+ifneq ($(YOLO_REUSE_DW3X3_WEIGHTS),1)
+$(error YOLO_DW3X3_ROLLING requires YOLO_REUSE_DW3X3_WEIGHTS=1)
+endif
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_DW3X3_ROLLING requires YOLO_1X1_ACC32=1)
+endif
+endif
+CFLAGS += -DYOLO_DW3X3_ROLLING=$(YOLO_DW3X3_ROLLING)
+YOLO_DW3_LEAKY_CLIP ?= 0
+ifneq ($(YOLO_DW3_LEAKY_CLIP),0)
+ifneq ($(YOLO_DW3_LEAKY_CLIP),1)
+$(error YOLO_DW3_LEAKY_CLIP supports only 0 or 1)
+endif
+ifneq ($(YOLO_DW3X3_ROLLING),1)
+$(error YOLO_DW3_LEAKY_CLIP requires YOLO_DW3X3_ROLLING=1)
+endif
+endif
+CFLAGS += -DYOLO_DW3_LEAKY_CLIP=$(YOLO_DW3_LEAKY_CLIP)
+YOLO_DW5X5_BLOCK ?= 0
+ifneq ($(YOLO_DW5X5_BLOCK),0)
+ifneq ($(YOLO_DW5X5_BLOCK),1)
+$(error YOLO_DW5X5_BLOCK supports only 0 or 1)
+endif
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_DW5X5_BLOCK requires YOLO_1X1_ACC32=1 for error propagation)
+endif
+endif
+CFLAGS += -DYOLO_DW5X5_BLOCK=$(YOLO_DW5X5_BLOCK)
+YOLO_DW5_POST8 ?= 0
+ifneq ($(YOLO_DW5_POST8),0)
+ifneq ($(YOLO_DW5_POST8),1)
+$(error YOLO_DW5_POST8 supports only 0 or 1)
+endif
+ifneq ($(YOLO_DW5X5_BLOCK),1)
+$(error YOLO_DW5_POST8 requires YOLO_DW5X5_BLOCK=1)
+endif
+ifneq ($(YOLO_BLOCK_POST8),1)
+$(error YOLO_DW5_POST8 requires YOLO_BLOCK_POST8=1)
+endif
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_DW5_POST8 requires YOLO_1X1_ACC32=1)
+endif
+endif
+CFLAGS += -DYOLO_DW5_POST8=$(YOLO_DW5_POST8)
+YOLO_DW5_PACK_FAST ?= 0
+ifneq ($(YOLO_DW5_PACK_FAST),0)
+ifneq ($(YOLO_DW5_PACK_FAST),1)
+$(error YOLO_DW5_PACK_FAST supports only 0 or 1)
+endif
+ifneq ($(YOLO_DW5X5_BLOCK),1)
+$(error YOLO_DW5_PACK_FAST requires YOLO_DW5X5_BLOCK=1)
+endif
+ifneq ($(YOLO_DW5_POST8),1)
+$(error YOLO_DW5_PACK_FAST requires YOLO_DW5_POST8=1)
+endif
+endif
+CFLAGS += -DYOLO_DW5_PACK_FAST=$(YOLO_DW5_PACK_FAST)
+YOLO_BLOCK_PHASE_PROFILE ?= 0
+ifneq ($(YOLO_BLOCK_PHASE_PROFILE),0)
+ifneq ($(YOLO_BLOCK_PHASE_PROFILE),1)
+$(error YOLO_BLOCK_PHASE_PROFILE supports only 0 or 1)
+endif
+ifneq ($(YOLO_1X1_BLOCK),1)
+$(error YOLO_BLOCK_PHASE_PROFILE requires YOLO_1X1_BLOCK=1)
+endif
+ifneq ($(YOLO_LAYER_PROFILE),1)
+$(error YOLO_BLOCK_PHASE_PROFILE requires YOLO_LAYER_PROFILE=1)
+endif
+endif
+CFLAGS += -DYOLO_BLOCK_PHASE_PROFILE=$(YOLO_BLOCK_PHASE_PROFILE)
+YOLO_BLOCK_CACHE_PHASE_PROFILE ?= 0
+ifneq ($(YOLO_BLOCK_CACHE_PHASE_PROFILE),0)
+ifneq ($(YOLO_BLOCK_CACHE_PHASE_PROFILE),1)
+$(error YOLO_BLOCK_CACHE_PHASE_PROFILE supports only 0 or 1)
+endif
+ifneq ($(YOLO_BLOCK_PHASE_PROFILE),1)
+$(error YOLO_BLOCK_CACHE_PHASE_PROFILE requires YOLO_BLOCK_PHASE_PROFILE=1)
+endif
+ifneq ($(YOLO_BLOCK_INPUT_CACHE),1)
+$(error YOLO_BLOCK_CACHE_PHASE_PROFILE requires YOLO_BLOCK_INPUT_CACHE=1)
+endif
+endif
+CFLAGS += -DYOLO_BLOCK_CACHE_PHASE_PROFILE=$(YOLO_BLOCK_CACHE_PHASE_PROFILE)
+YOLO_BLOCK_INPUT_CACHE ?= 0
+ifneq ($(YOLO_BLOCK_INPUT_CACHE),0)
+ifneq ($(YOLO_BLOCK_INPUT_CACHE),1)
+$(error YOLO_BLOCK_INPUT_CACHE supports only 0 or 1)
+endif
+ifneq ($(YOLO_1X1_BLOCK),1)
+$(error YOLO_BLOCK_INPUT_CACHE requires YOLO_1X1_BLOCK=1)
+endif
+ifneq ($(YOLO_BLOCK_PHASE_PROFILE),0)
+ifneq ($(YOLO_BLOCK_CACHE_PHASE_PROFILE),1)
+$(error YOLO_BLOCK_INPUT_CACHE phase sampling requires YOLO_BLOCK_CACHE_PHASE_PROFILE=1)
+endif
+endif
+endif
+CFLAGS += -DYOLO_BLOCK_INPUT_CACHE=$(YOLO_BLOCK_INPUT_CACHE)
+YOLO_CACHE_PACK4 ?= 0
+ifneq ($(YOLO_CACHE_PACK4),0)
+ifneq ($(YOLO_CACHE_PACK4),1)
+$(error YOLO_CACHE_PACK4 supports only 0 or 1)
+endif
+ifneq ($(YOLO_BLOCK_INPUT_CACHE),1)
+$(error YOLO_CACHE_PACK4 requires YOLO_BLOCK_INPUT_CACHE=1)
+endif
+ifneq ($(YOLO_1X1_BLOCK),1)
+$(error YOLO_CACHE_PACK4 requires YOLO_1X1_BLOCK=1)
+endif
+endif
+CFLAGS += -DYOLO_CACHE_PACK4=$(YOLO_CACHE_PACK4)
+YOLO_3X3_INPUT3_PREPACK ?= 0
+ifneq ($(YOLO_3X3_INPUT3_PREPACK),0)
+ifneq ($(YOLO_3X3_INPUT3_PREPACK),1)
+$(error YOLO_3X3_INPUT3_PREPACK supports only 0 or 1)
+endif
+ifneq ($(YOLO_REUSE_DW3X3_WEIGHTS),1)
+$(error YOLO_3X3_INPUT3_PREPACK requires YOLO_REUSE_DW3X3_WEIGHTS=1)
+endif
+ifneq ($(YOLO_TILE_1X1_WEIGHTS),1)
+$(error YOLO_3X3_INPUT3_PREPACK requires YOLO_TILE_1X1_WEIGHTS=1)
+endif
+endif
+CFLAGS += -DYOLO_3X3_INPUT3_PREPACK=$(YOLO_3X3_INPUT3_PREPACK)
+YOLO_LAYER_PROFILE ?= 0
+YOLO_REUSE_1X1_WEIGHTS ?= 0
+YOLO_1X1_SMALL_PACK ?= 0
+ifneq ($(YOLO_1X1_SMALL_PACK),0)
+ifneq ($(YOLO_1X1_SMALL_PACK),1)
+$(error YOLO_1X1_SMALL_PACK supports only 0 or 1)
+endif
+ifneq ($(YOLO_REUSE_1X1_WEIGHTS),1)
+$(error YOLO_1X1_SMALL_PACK requires YOLO_REUSE_1X1_WEIGHTS=1)
+endif
+endif
+CFLAGS += -DYOLO_1X1_SMALL_PACK=$(YOLO_1X1_SMALL_PACK)
+YOLO_PREPACK_1X1_WEIGHTS ?= 0
+YOLO_REUSE_ACTIVATIONS ?= 0
+YOLO_REUSE_DW3X3_WEIGHTS ?= 0
+YOLO_DW3X3_INTERIOR ?= 0
+ifneq ($(YOLO_DW3X3_INTERIOR),0)
+ifneq ($(YOLO_DW3X3_INTERIOR),1)
+$(error YOLO_DW3X3_INTERIOR supports only 0 or 1)
+endif
+ifneq ($(YOLO_REUSE_DW3X3_WEIGHTS),1)
+$(error YOLO_DW3X3_INTERIOR requires YOLO_REUSE_DW3X3_WEIGHTS=1)
+endif
+endif
+CFLAGS += -DYOLO_DW3X3_INTERIOR=$(YOLO_DW3X3_INTERIOR)
+YOLO_TILE_1X1_WEIGHTS ?= 0
+YOLO_REUSE_1X1_INPUT ?= 0
+YOLO_1X1_PACK9 ?= 0
+ifneq ($(YOLO_1X1_PACK9),0)
+ifneq ($(YOLO_1X1_PACK9),1)
+$(error YOLO_1X1_PACK9 supports only 0 or 1)
+endif
+ifneq ($(YOLO_REUSE_1X1_INPUT),1)
+$(error YOLO_1X1_PACK9 requires YOLO_REUSE_1X1_INPUT=1)
+endif
+endif
+CFLAGS += -DYOLO_1X1_PACK9=$(YOLO_1X1_PACK9)
+YOLO_1X1_ACC32 ?= 0
+ifneq ($(YOLO_1X1_ACC32),0)
+ifneq ($(YOLO_1X1_ACC32),1)
+$(error YOLO_1X1_ACC32 supports only 0 or 1)
+endif
+ifneq ($(YOLO_REUSE_1X1_INPUT),1)
+$(error YOLO_1X1_ACC32 requires YOLO_REUSE_1X1_INPUT=1)
+endif
+endif
+CFLAGS += -DYOLO_1X1_ACC32=$(YOLO_1X1_ACC32)
+YOLO_1X1_INPUT_BATCH ?= 4
+ifneq ($(YOLO_1X1_INPUT_BATCH),4)
+ifneq ($(YOLO_1X1_INPUT_BATCH),8)
+ifneq ($(YOLO_1X1_INPUT_BATCH),12)
+$(error YOLO_1X1_INPUT_BATCH supports only 4, 8 or 12)
+endif
+endif
+ifneq ($(YOLO_REUSE_1X1_INPUT),1)
+$(error YOLO_1X1_INPUT_BATCH=8/12 requires YOLO_REUSE_1X1_INPUT=1)
+endif
+endif
+CFLAGS += -DYOLO_1X1_INPUT_BATCH=$(YOLO_1X1_INPUT_BATCH)
+ifeq ($(YOLO_REUSE_1X1_INPUT),1)
+ifneq ($(YOLO_TILE_1X1_WEIGHTS),1)
+$(error YOLO_REUSE_1X1_INPUT requires YOLO_TILE_1X1_WEIGHTS=1)
+endif
+CFLAGS += -DYOLO_REUSE_1X1_INPUT=1
+endif
+ifeq ($(YOLO_TILE_1X1_WEIGHTS),1)
+ifneq ($(YOLO_PREPACK_1X1_WEIGHTS),1)
+$(error YOLO_TILE_1X1_WEIGHTS requires YOLO_PREPACK_1X1_WEIGHTS=1)
+endif
+CFLAGS += -DYOLO_TILE_1X1_WEIGHTS=1
+endif
+ifeq ($(YOLO_REUSE_DW3X3_WEIGHTS),1)
+CFLAGS += -DYOLO_REUSE_DW3X3_WEIGHTS=1
+endif
+TCM_STACK ?= 0
+YOLO_TCM_LAYER ?= 0
+ifeq ($(YOLO_TCM_LAYER),1)
+ifneq ($(TCM_STACK),1)
+$(error YOLO_TCM_LAYER requires TCM_STACK=1)
+endif
+CFLAGS += -DYOLO_TCM_LAYER=1
+endif
+ifeq ($(TCM_STACK),1)
+ifneq ($(TCM_TEXT),1)
+$(error TCM_STACK requires TCM_TEXT=1)
+endif
+LINK_SCRIPT := ../common/link_ddr_ai_tcm_stack.ld
+ifeq ($(YOLO_RGB3_BLOCK),1)
+LINK_SCRIPT := ../common/link_ddr_ai_tcm_stack_rgb3.ld
+endif
+STACK_PROBE_BYTES ?= 8192
+STACK_PROBE_ASSERT_SCRIPT := ../common/stack_probe_tcm_assert.ld
+SRCS += ../common/tcm_stack.c
+CFLAGS += -DTCM_STACK=1
+endif
+CFLAGS += -DYOLO_UART_IMAGE=$(YOLO_UART_IMAGE) -DYOLO_LAYER_PROFILE=$(YOLO_LAYER_PROFILE) \
+          -DYOLO_REUSE_1X1_WEIGHTS=$(YOLO_REUSE_1X1_WEIGHTS) \
+          -DYOLO_PREPACK_1X1_WEIGHTS=$(YOLO_PREPACK_1X1_WEIGHTS) \
+          -DYOLO_REUSE_ACTIVATIONS=$(YOLO_REUSE_ACTIVATIONS)
+include ../common/common.mk
+
+ifeq ($(YOLO_REUSE_ACTIVATIONS),1)
+ifeq ($(YOLO_IDENTITY_FORWARD),1)
+.PHONY: check_identity_forward
+check_identity_forward:
+	$(PYTHON) $(ROOT)/tools/yolo_check_identity_forward.py --root $(ROOT) --check
+$(ELF): model_identity_arena.h identity_forward_contract.json check_identity_forward
+else
+.PHONY: check_arena
+check_arena:
+	$(PYTHON) $(ROOT)/tools/yolo_plan_arena.py --graph model_graph.h --header model_arena.h --check
+$(ELF): model_arena.h check_arena
+endif
+endif

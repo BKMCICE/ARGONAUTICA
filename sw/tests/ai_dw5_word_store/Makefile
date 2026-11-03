@@ -1,0 +1,12 @@
+PROG := ai_dw5_word_store
+SRCS := main.c operator.c ../../common/tcm_stack.c
+TCM_TEXT := 1
+LINK_SCRIPT := link.ld
+A88_FULL ?= 0
+CFLAGS += -DA88_FULL=$(A88_FULL) -DTCM_STACK=1 -fstack-usage -fno-jump-tables -fno-ipa-icf
+CFLAGS += -DYOLO_DW5X5_BLOCK=1 -DYOLO_DW5_POST8=1 -DYOLO_BLOCK_POST8=1
+CFLAGS += -DYOLO_BLOCK8=1 -DYOLO_1X1_BLOCK=1 -DYOLO_1X1_ACC32=1
+CFLAGS += -DYOLO_REUSE_1X1_INPUT=1 -DYOLO_TILE_1X1_WEIGHTS=1 -DYOLO_PREPACK_1X1_WEIGHTS=1
+include ../../common/common.mk
+
+CFLAGS += -DYOLO_DW5_PACK_FAST=1

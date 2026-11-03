@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARGONAUTICA · FPGA 识别结果</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light;--ink:#142d35;--muted:#596b70;--line:#d7e2df;--green:#006b56;--paper:#f5f7f3}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font:15px/1.6 "Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink)}
+main{max-width:1280px;margin:auto;padding:32px}header{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--line);padding-bottom:20px}.brand{font:700 13px/1.5 Consolas,monospace;letter-spacing:2px;color:var(--green)}h1{font-size:28px;margin:6px 0}.sub,.muted{color:var(--muted)}.badge{padding:8px 14px;border-radius:6px;background:#dceee6;color:#09583f;font-weight:600;white-space:nowrap}.badge.replay{background:#fff0ca;color:#775413}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.metric{padding:18px 20px;border:1px solid var(--line);border-radius:8px;background:white}.metric b{display:block;font-size:29px;font-weight:650;line-height:1.4}.metric span{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(320px,1fr);gap:22px}.panel{background:white;border:1px solid var(--line);border-radius:9px;overflow:hidden}.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);gap:12px}button{font:inherit;cursor:pointer;border:1px solid var(--line);background:white;border-radius:5px;padding:5px 10px;color:var(--ink)}button.active{background:var(--green);border-color:var(--green);color:white}button:disabled{opacity:.4;cursor:default}svg{display:block;max-height:600px;width:100%;background:#142d35}.caption{padding:12px 18px;color:var(--muted);font-size:13px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:10px 14px;border-bottom:1px solid #edf0ec}th{font-weight:500;color:var(--muted)}tr.selected{background:#e8f3ee}.num{font-family:Consolas,monospace}.count{color:var(--green);font-weight:650}.details{padding:16px 20px;background:#edf2ec;margin-top:22px;border-radius:8px;overflow-wrap:anywhere}.details p{margin:7px 0;font-size:13px}.details summary{cursor:pointer;font-weight:600}.foot{font-size:12px;color:var(--muted);margin-top:20px}label{font-size:13px;cursor:pointer}@media(max-width:850px){main{padding:18px}.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start;flex-direction:column}h1{font-size:24px}}
+</style>
+<main><header><div><div class="brand">ARGONAUTICA / PANGU 50K</div><h1>FPGA 目标识别结果</h1><div class="sub">YOLO 推理在 FPGA 上运行 · 检测框由电脑绘制</div></div><div id="mode" class="badge"></div></header>
+<section class="metrics"><div class="metric"><span>FPGA 前向 · 标称 100MHz</span><b id="forward"></b></div><div class="metric"><span>应用上传 · UART</span><b id="application"></b></div><div class="metric"><span>图片上传 · UART</span><b id="input"></b></div><div class="metric"><span>本次操作 · 见下方计时范围</span><b id="operation"></b></div></section>
+<section class="grid"><div class="panel"><div class="bar"><div><button id="input-view" class="active">实际输入重建</button> <button id="original-view">原图</button></div><label><input type="checkbox" id="boxes" checked> 显示检测框</label></div><svg id="scene" role="img" aria-label="送入FPGA的图像与真实串口检测框"></svg><div class="caption" id="image-caption"></div></div>
+<div class="panel"><div class="bar"><strong>检测结果</strong><span id="count" class="count"></span></div><table><thead><tr><th>#</th><th>类别</th><th>置信度</th><th>输入坐标</th></tr></thead><tbody id="rows"></tbody></table><div class="caption">置信度由模型输出，不等于准确率。点击结果可突出对应框；保留全部结果，包括误检。</div></div></section>
+<details class="details" open><summary>来源与运行校验</summary><p id="origin"></p><p id="checks"></p><p id="timing"></p><p id="version"></p><p id="uart"></p><p id="frame"></p></details>
+<div class="foot">静态图片演示；前向耗时不代表连续视频 FPS。HDMI 小屏显示状态页，原图叠框显示在本电脑。此文件可离线查看。</div></main>
+<script type="application/json" id="result">{{RESULT_JSON}}</script>
+<script>
+const d=JSON.parse(document.getElementById('result').textContent),ns='http://www.w3.org/2000/svg';
+const set=(id,text)=>document.getElementById(id).textContent=text;
+const seconds=v=>v===null||v===undefined?'未记录':Number(v).toFixed(4)+' s';
+set('mode',d.mode==='live'?'本轮实板采集结果':'历史实板日志回放');if(d.mode!=='live')document.getElementById('mode').classList.add('replay');
+set('forward',seconds(d.inference.forward_seconds));set('application',seconds(d.timing.application_upload_seconds));set('input',seconds(d.timing.input_upload_seconds));set('operation',seconds(d.timing.operation_seconds));set('count',d.inference.detections.length+' 个目标');
+const localTime=t=>new Date(t).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false})+' (UTC+8)';
+set('origin',(d.mode==='live'?'实板采集时间：':'历史记录来源：')+(d.mode==='live'?localTime(d.acquired_at_utc):d.source_stage)+'；报告生成：'+localTime(d.rendered_at_utc));
+set('checks','运行校验通过：双头 '+d.inference.head_fnv1a.join(' / ')+'；TCM '+d.inference.tcm_bytes+' B；栈保护 256 B 零变化。识别率未在本次演示中测量。');
+set('timing','操作范围：'+d.timing.operation_scope+'。'+d.timing.note);
+set('version','正式硬件 '+d.hardware.source_commit.slice(0,12)+' / 固件 '+d.firmware.source_commit.slice(0,12)+'；BIT SHA256 '+d.hardware.sha256+'；BIN SHA256 '+d.firmware.sha256);
+set('uart','UART SHA256 '+d.inference.uart_sha256);set('frame','输入帧 SHA256 '+d.frame_sha256+'；原图与输入绑定：'+(d.original_image_sha256?'已校验':'未提供原图，仅显示已校验输入帧'));
+let view='input',selected=-1;const colors=['#ffd269','#6af0a9','#8bd4ff','#ffabda','#dfbdff','#ffffff'];
+function el(name,attrs,parent){let x=document.createElementNS(ns,name);Object.entries(attrs).forEach(([k,v])=>x.setAttribute(k,v));parent.appendChild(x);return x}
+function draw(){const im=d.images[view],svg=document.getElementById('scene');svg.replaceChildren();svg.setAttribute('viewBox',`0 0 ${im.width} ${im.height}`);el('image',{href:im.data_uri,width:im.width,height:im.height},svg);
+ if(document.getElementById('boxes').checked)d.inference.detections.forEach((b,i)=>{const [x1,y1,x2,y2]=b.box,sx=im.width/320,sy=im.height/320,color=colors[i%colors.length],g=el('g',{'data-detection':i,opacity:selected<0||selected===i?1:.22},svg),font=Math.max(9,im.width/48);el('rect',{x:x1*sx,y:y1*sy,width:(x2-x1)*sx,height:(y2-y1)*sy,fill:'none',stroke:color,'stroke-width':im.width/190},g);let y=Math.max(font+3,y1*sy-4),labelWidth=Math.min(im.width,(b.label.length+8)*font*.62+6),labelX=Math.max(0,Math.min(x1*sx,im.width-labelWidth));el('rect',{x:labelX,y:y-font,width:labelWidth,height:font+4,fill:color},g);let t=el('text',{x:labelX+3,y:y,'font-size':font,fill:'#142d35','font-family':'Segoe UI, sans-serif'},g);t.textContent=b.label+' '+(b.score_milli/10).toFixed(1)+'%';});
+ set('image-caption',view==='input'?'320×320 CHW INT8 输入帧重建；颜色经过量化，框坐标直接来自本次串口输出。':'原图按输入拉伸关系映射检测框：x×原宽/320，y×原高/320；没有改用letterbox。');
+ document.querySelectorAll('#rows tr').forEach((tr,i)=>tr.classList.toggle('selected',selected===i));}
+d.inference.detections.forEach((b,i)=>{let tr=document.createElement('tr');[i+1,b.label,(b.score_milli/10).toFixed(1)+'%',b.box.join(', ')].forEach(v=>{let td=document.createElement('td');td.textContent=v;tr.appendChild(td)});tr.addEventListener('click',()=>{selected=selected===i?-1:i;draw()});document.getElementById('rows').appendChild(tr)});
+document.getElementById('original-view').disabled=!d.images.original;
+for(const name of ['input','original'])document.getElementById(name+'-view').addEventListener('click',()=>{view=name;for(const n of ['input','original'])document.getElementById(n+'-view').classList.toggle('active',n===name);draw()});document.getElementById('boxes').addEventListener('change',draw);draw();
+</script></html>

@@ -1,0 +1,33 @@
+{
+  "result": "PUBLIC_SHOWCASE_APPLICATION_AND_BOOT_BINARY_EXACT_REBUILD_PASS",
+  "components": {
+    "application": {
+      "result": "DEMO_PORTABLE_BUILD_ACCEPTED_BINARY_EXACT_MATCH_NOT_BOARD_RETEST",
+      "component": "app",
+      "binary_bytes": 742936,
+      "binary_sha256": "0271A7F60AE68A07B054EAB1C32B5E08782E4FF08334CB8D2E83A343D71E6EAB",
+      "expected_bin_sha256": "0271A7F60AE68A07B054EAB1C32B5E08782E4FF08334CB8D2E83A343D71E6EAB",
+      "accepted_binary_exact_match": true,
+      "builder_sha256": "E649ED60541D434546569F7E433FC4F66D38F3405D16E4D01A0F572CACEBB0F3",
+      "recipe_sha256": "C81D38CA2F15662E576B4558A21318DCB3448F3A5AFA9A7B0E7B4D0A35BC0A0B",
+      "actual_execution_receipt_sha256": "DFA86B0BA236269EB8223EDFEB7D512C3F5E45A8E34A5256DB794BD2D196C52D"
+    },
+    "boot": {
+      "result": "DEMO_PORTABLE_BUILD_ACCEPTED_BINARY_EXACT_MATCH_NOT_BOARD_RETEST",
+      "component": "boot",
+      "binary_bytes": 61448,
+      "binary_sha256": "E36CC560CC4C449C3465675CACD31843038983616031FEC9F78D6F59C115CDD3",
+      "expected_bin_sha256": "E36CC560CC4C449C3465675CACD31843038983616031FEC9F78D6F59C115CDD3",
+      "accepted_binary_exact_match": true,
+      "builder_sha256": "E649ED60541D434546569F7E433FC4F66D38F3405D16E4D01A0F572CACEBB0F3",
+      "recipe_sha256": "CC3A3F0EFEFC83A0570F7228510B7BEBD51F608DCA3767A4BA3F5D4B37033BE3",
+      "actual_execution_receipt_sha256": "2F213362C4570E88440880C7551705E14ED2AB8A975A8DAD13BB6B36CA8A7EFF",
+      "rom_sha256": "50F9A748FF71AE3F3BE75F1593930A87B0CBE98AA90F3BD28A938279C4F9C449"
+    }
+  },
+  "compiler_version": "15.2.0",
+  "source_provenance_sha256": "EF7B81901C0D1B50428624C0E44AB53B28DDA65BD69D9FF627B000C63333391D",
+  "hardware_implementation": "NOT_RUN",
+  "physical_board_retest": "NOT_RUN",
+  "scope": "The curated source directory was actually compiled in new external output directories. App BIN and boot BIN/HEX match the original accepted identities; vendor IP and prebuilt images remain excluded. No new board-level acceptance or license grant."
+}

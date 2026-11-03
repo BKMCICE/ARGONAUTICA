@@ -1,0 +1,851 @@
+{
+  "source_sha256": "1c445c42bbd6df63edea2cc69f99667b5650d663ca11e34b116240740cd42890",
+  "weights_sha256": "7df8198f4c17da55db55228aad679bb2e5169b5252130578e4bd452cbea4df47",
+  "params_sha256": "c2e6ffa3ab560beb65247081c0fff40f6859fbce171c1557dd9924cb13adab9e",
+  "weights_bytes": 319024,
+  "params_bytes": 57136,
+  "relative_l2_error": 0.004747311254324095,
+  "max_abs_error": 0.20112269129025684,
+  "convolutions": [
+    {
+      "layer": 0,
+      "weight_offset": 0,
+      "weight_bytes": 216,
+      "param_offset": 0,
+      "output_channels": 8,
+      "input_channels_per_group": 3,
+      "kernel_size": 3,
+      "groups": 1
+    },
+    {
+      "layer": 1,
+      "weight_offset": 216,
+      "weight_bytes": 64,
+      "param_offset": 64,
+      "output_channels": 8,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 2,
+      "weight_offset": 280,
+      "weight_bytes": 72,
+      "param_offset": 128,
+      "output_channels": 8,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 8
+    },
+    {
+      "layer": 3,
+      "weight_offset": 352,
+      "weight_bytes": 32,
+      "param_offset": 192,
+      "output_channels": 4,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 4,
+      "weight_offset": 384,
+      "weight_bytes": 32,
+      "param_offset": 224,
+      "output_channels": 8,
+      "input_channels_per_group": 4,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 5,
+      "weight_offset": 416,
+      "weight_bytes": 72,
+      "param_offset": 288,
+      "output_channels": 8,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 8
+    },
+    {
+      "layer": 6,
+      "weight_offset": 488,
+      "weight_bytes": 32,
+      "param_offset": 352,
+      "output_channels": 4,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 9,
+      "weight_offset": 520,
+      "weight_bytes": 96,
+      "param_offset": 384,
+      "output_channels": 24,
+      "input_channels_per_group": 4,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 10,
+      "weight_offset": 616,
+      "weight_bytes": 216,
+      "param_offset": 576,
+      "output_channels": 24,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 24
+    },
+    {
+      "layer": 11,
+      "weight_offset": 832,
+      "weight_bytes": 192,
+      "param_offset": 768,
+      "output_channels": 8,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 12,
+      "weight_offset": 1024,
+      "weight_bytes": 256,
+      "param_offset": 832,
+      "output_channels": 32,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 13,
+      "weight_offset": 1280,
+      "weight_bytes": 288,
+      "param_offset": 1088,
+      "output_channels": 32,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 32
+    },
+    {
+      "layer": 14,
+      "weight_offset": 1568,
+      "weight_bytes": 256,
+      "param_offset": 1344,
+      "output_channels": 8,
+      "input_channels_per_group": 32,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 17,
+      "weight_offset": 1824,
+      "weight_bytes": 256,
+      "param_offset": 1408,
+      "output_channels": 32,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 18,
+      "weight_offset": 2080,
+      "weight_bytes": 288,
+      "param_offset": 1664,
+      "output_channels": 32,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 32
+    },
+    {
+      "layer": 19,
+      "weight_offset": 2368,
+      "weight_bytes": 256,
+      "param_offset": 1920,
+      "output_channels": 8,
+      "input_channels_per_group": 32,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 22,
+      "weight_offset": 2624,
+      "weight_bytes": 256,
+      "param_offset": 1984,
+      "output_channels": 32,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 23,
+      "weight_offset": 2880,
+      "weight_bytes": 288,
+      "param_offset": 2240,
+      "output_channels": 32,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 32
+    },
+    {
+      "layer": 24,
+      "weight_offset": 3168,
+      "weight_bytes": 256,
+      "param_offset": 2496,
+      "output_channels": 8,
+      "input_channels_per_group": 32,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 25,
+      "weight_offset": 3424,
+      "weight_bytes": 384,
+      "param_offset": 2560,
+      "output_channels": 48,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 26,
+      "weight_offset": 3808,
+      "weight_bytes": 432,
+      "param_offset": 2944,
+      "output_channels": 48,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 48
+    },
+    {
+      "layer": 27,
+      "weight_offset": 4240,
+      "weight_bytes": 384,
+      "param_offset": 3328,
+      "output_channels": 8,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 30,
+      "weight_offset": 4624,
+      "weight_bytes": 384,
+      "param_offset": 3392,
+      "output_channels": 48,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 31,
+      "weight_offset": 5008,
+      "weight_bytes": 432,
+      "param_offset": 3776,
+      "output_channels": 48,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 48
+    },
+    {
+      "layer": 32,
+      "weight_offset": 5440,
+      "weight_bytes": 384,
+      "param_offset": 4160,
+      "output_channels": 8,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 35,
+      "weight_offset": 5824,
+      "weight_bytes": 384,
+      "param_offset": 4224,
+      "output_channels": 48,
+      "input_channels_per_group": 8,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 36,
+      "weight_offset": 6208,
+      "weight_bytes": 432,
+      "param_offset": 4608,
+      "output_channels": 48,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 48
+    },
+    {
+      "layer": 37,
+      "weight_offset": 6640,
+      "weight_bytes": 768,
+      "param_offset": 4992,
+      "output_channels": 16,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 38,
+      "weight_offset": 7408,
+      "weight_bytes": 1536,
+      "param_offset": 5120,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 39,
+      "weight_offset": 8944,
+      "weight_bytes": 864,
+      "param_offset": 5888,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96
+    },
+    {
+      "layer": 40,
+      "weight_offset": 9808,
+      "weight_bytes": 1536,
+      "param_offset": 6656,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 43,
+      "weight_offset": 11344,
+      "weight_bytes": 1536,
+      "param_offset": 6784,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 44,
+      "weight_offset": 12880,
+      "weight_bytes": 864,
+      "param_offset": 7552,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96
+    },
+    {
+      "layer": 45,
+      "weight_offset": 13744,
+      "weight_bytes": 1536,
+      "param_offset": 8320,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 48,
+      "weight_offset": 15280,
+      "weight_bytes": 1536,
+      "param_offset": 8448,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 49,
+      "weight_offset": 16816,
+      "weight_bytes": 864,
+      "param_offset": 9216,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96
+    },
+    {
+      "layer": 50,
+      "weight_offset": 17680,
+      "weight_bytes": 1536,
+      "param_offset": 9984,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 53,
+      "weight_offset": 19216,
+      "weight_bytes": 1536,
+      "param_offset": 10112,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 54,
+      "weight_offset": 20752,
+      "weight_bytes": 864,
+      "param_offset": 10880,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96
+    },
+    {
+      "layer": 55,
+      "weight_offset": 21616,
+      "weight_bytes": 1536,
+      "param_offset": 11648,
+      "output_channels": 16,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 58,
+      "weight_offset": 23152,
+      "weight_bytes": 1536,
+      "param_offset": 11776,
+      "output_channels": 96,
+      "input_channels_per_group": 16,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 59,
+      "weight_offset": 24688,
+      "weight_bytes": 864,
+      "param_offset": 12544,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 96
+    },
+    {
+      "layer": 60,
+      "weight_offset": 25552,
+      "weight_bytes": 2304,
+      "param_offset": 13312,
+      "output_channels": 24,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 61,
+      "weight_offset": 27856,
+      "weight_bytes": 3264,
+      "param_offset": 13504,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 62,
+      "weight_offset": 31120,
+      "weight_bytes": 1224,
+      "param_offset": 14592,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136
+    },
+    {
+      "layer": 63,
+      "weight_offset": 32344,
+      "weight_bytes": 3264,
+      "param_offset": 15680,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 66,
+      "weight_offset": 35608,
+      "weight_bytes": 3264,
+      "param_offset": 15872,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 67,
+      "weight_offset": 38872,
+      "weight_bytes": 1224,
+      "param_offset": 16960,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136
+    },
+    {
+      "layer": 68,
+      "weight_offset": 40096,
+      "weight_bytes": 3264,
+      "param_offset": 18048,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 71,
+      "weight_offset": 43360,
+      "weight_bytes": 3264,
+      "param_offset": 18240,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 72,
+      "weight_offset": 46624,
+      "weight_bytes": 1224,
+      "param_offset": 19328,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136
+    },
+    {
+      "layer": 73,
+      "weight_offset": 47848,
+      "weight_bytes": 3264,
+      "param_offset": 20416,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 76,
+      "weight_offset": 51112,
+      "weight_bytes": 3264,
+      "param_offset": 20608,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 77,
+      "weight_offset": 54376,
+      "weight_bytes": 1224,
+      "param_offset": 21696,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136
+    },
+    {
+      "layer": 78,
+      "weight_offset": 55600,
+      "weight_bytes": 3264,
+      "param_offset": 22784,
+      "output_channels": 24,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 81,
+      "weight_offset": 58864,
+      "weight_bytes": 3264,
+      "param_offset": 22976,
+      "output_channels": 136,
+      "input_channels_per_group": 24,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 82,
+      "weight_offset": 62128,
+      "weight_bytes": 1224,
+      "param_offset": 24064,
+      "output_channels": 136,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 136
+    },
+    {
+      "layer": 83,
+      "weight_offset": 63352,
+      "weight_bytes": 6528,
+      "param_offset": 25152,
+      "output_channels": 48,
+      "input_channels_per_group": 136,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 84,
+      "weight_offset": 69880,
+      "weight_bytes": 10752,
+      "param_offset": 25536,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 85,
+      "weight_offset": 80632,
+      "weight_bytes": 2016,
+      "param_offset": 27328,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224
+    },
+    {
+      "layer": 86,
+      "weight_offset": 82648,
+      "weight_bytes": 10752,
+      "param_offset": 29120,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 89,
+      "weight_offset": 93400,
+      "weight_bytes": 10752,
+      "param_offset": 29504,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 90,
+      "weight_offset": 104152,
+      "weight_bytes": 2016,
+      "param_offset": 31296,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224
+    },
+    {
+      "layer": 91,
+      "weight_offset": 106168,
+      "weight_bytes": 10752,
+      "param_offset": 33088,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 94,
+      "weight_offset": 116920,
+      "weight_bytes": 10752,
+      "param_offset": 33472,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 95,
+      "weight_offset": 127672,
+      "weight_bytes": 2016,
+      "param_offset": 35264,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224
+    },
+    {
+      "layer": 96,
+      "weight_offset": 129688,
+      "weight_bytes": 10752,
+      "param_offset": 37056,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 99,
+      "weight_offset": 140440,
+      "weight_bytes": 10752,
+      "param_offset": 37440,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 100,
+      "weight_offset": 151192,
+      "weight_bytes": 2016,
+      "param_offset": 39232,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224
+    },
+    {
+      "layer": 101,
+      "weight_offset": 153208,
+      "weight_bytes": 10752,
+      "param_offset": 41024,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 104,
+      "weight_offset": 163960,
+      "weight_bytes": 10752,
+      "param_offset": 41408,
+      "output_channels": 224,
+      "input_channels_per_group": 48,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 105,
+      "weight_offset": 174712,
+      "weight_bytes": 2016,
+      "param_offset": 43200,
+      "output_channels": 224,
+      "input_channels_per_group": 1,
+      "kernel_size": 3,
+      "groups": 224
+    },
+    {
+      "layer": 106,
+      "weight_offset": 176728,
+      "weight_bytes": 10752,
+      "param_offset": 44992,
+      "output_channels": 48,
+      "input_channels_per_group": 224,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 115,
+      "weight_offset": 187480,
+      "weight_bytes": 18432,
+      "param_offset": 45376,
+      "output_channels": 96,
+      "input_channels_per_group": 192,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 116,
+      "weight_offset": 205912,
+      "weight_bytes": 2400,
+      "param_offset": 46144,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 96
+    },
+    {
+      "layer": 117,
+      "weight_offset": 208312,
+      "weight_bytes": 9216,
+      "param_offset": 46912,
+      "output_channels": 96,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 118,
+      "weight_offset": 217528,
+      "weight_bytes": 2400,
+      "param_offset": 47680,
+      "output_channels": 96,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 96
+    },
+    {
+      "layer": 119,
+      "weight_offset": 219928,
+      "weight_bytes": 9216,
+      "param_offset": 48448,
+      "output_channels": 96,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 120,
+      "weight_offset": 229144,
+      "weight_bytes": 24480,
+      "param_offset": 49216,
+      "output_channels": 255,
+      "input_channels_per_group": 96,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 125,
+      "weight_offset": 253624,
+      "weight_bytes": 3000,
+      "param_offset": 51256,
+      "output_channels": 120,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 120
+    },
+    {
+      "layer": 126,
+      "weight_offset": 256624,
+      "weight_bytes": 14400,
+      "param_offset": 52216,
+      "output_channels": 120,
+      "input_channels_per_group": 120,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 127,
+      "weight_offset": 271024,
+      "weight_bytes": 3000,
+      "param_offset": 53176,
+      "output_channels": 120,
+      "input_channels_per_group": 1,
+      "kernel_size": 5,
+      "groups": 120
+    },
+    {
+      "layer": 128,
+      "weight_offset": 274024,
+      "weight_bytes": 14400,
+      "param_offset": 54136,
+      "output_channels": 120,
+      "input_channels_per_group": 120,
+      "kernel_size": 1,
+      "groups": 1
+    },
+    {
+      "layer": 129,
+      "weight_offset": 288424,
+      "weight_bytes": 30600,
+      "param_offset": 55096,
+      "output_channels": 255,
+      "input_channels_per_group": 120,
+      "kernel_size": 1,
+      "groups": 1
+    }
+  ]
+}

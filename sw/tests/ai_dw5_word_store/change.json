@@ -1,0 +1,5 @@
+{
+  "header_sha256_normalized": "E2818786219E1CCCBB4834FECE88A095A4E8B6FDCDD510CDFF65DCEFE9C37E09",
+  "old_store": "                    for(uint32_t byte=0;byte<count;++byte){\n                        output[oc*op+oy*l->ow+ox+px++]=(int8_t)word;word>>=8;\n                    }",
+  "new_store": "                    post8_word_store(output+oc*op+oy*l->ow+ox+px,word,count);\n                    px+=count;"
+}

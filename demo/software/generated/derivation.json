@@ -1,0 +1,122 @@
+{
+  "crt0.S": {
+    "base_sha256": "2B04D2CF9CB6E97D046F0C3D87236EA25F5533143279DA316637E630E80B423D",
+    "generated_sha256": "C82257A77AAAB30EC53FF954A551A63B54A4BABB954EC0EA5C0E7B8CA8C10968",
+    "hooks": [
+      {
+        "old": "    call main\n#if TCM_STACK\n    call tcm_stack_finish\n    call h18_ui_exit\n#endif",
+        "new": "    /* H20 DDR wrapper owns each frame stack check and final publication. */\n    call h20_loop_entry"
+      }
+    ],
+    "exact_reverse_original": true
+  },
+  "pipeline.c": {
+    "base_sha256": "1E7E340B65B57D6CCB75F0CB66A02A9A8B63DF4539C05B435B4D3F200B216908",
+    "generated_sha256": "E2C09576068929D6478B9D1042C0C41CEDEF5FAEC5A5ED6F694ACFC7C767C4CC",
+    "hooks": [
+      {
+        "old": "#include \"soc.h\"",
+        "new": "#ifdef H20_HOST_TEST\n#include \"h20_host.h\"\n#else\n#include \"soc.h\"\n#endif"
+      },
+      {
+        "old": "#define C(o) REG32(0x40006000u + (o))",
+        "new": "#ifdef H20_HOST_TEST\n#define C(o) h20_test_read(o)\n#define H20_WRITE(o,v) h20_test_write((o),(v))\n#define H20_RAW_BYTE(v) h20_test_raw_byte(v)\n#else\n#define C(o) REG32(0x40006000u + (o))\n#define H20_WRITE(o,v) do { C(o)=(v); } while(0)\n#define H20_RAW_BYTE(v) do { UART_DATA=(uint32_t)(uint8_t)(v); } while(0)\n#endif\n#ifndef H20_RAW_EXPORT\n#define H20_RAW_EXPORT 0\n#endif\nextern uint32_t h20_round_number,h20_previous_job,h20_expected_job;\nstatic uint32_t h20_active_job,h20_have_guards;"
+      },
+      {
+        "old": "    C(0x7c)=1u;",
+        "new": "    H20_WRITE(0x7c,1u);"
+      },
+      {
+        "old": "    C(0x2c)=1u;",
+        "new": "    H20_WRITE(0x2c,1u);"
+      },
+      {
+        "old": "    while(UART_STATUS & UART_ST_TX_FULL) {",
+        "new": "#ifndef H20_HOST_TEST\n    while(UART_STATUS & UART_ST_TX_FULL) {"
+      },
+      {
+        "old": "    UART_DATA=(uint32_t)(uint8_t)ch;",
+        "new": "    #endif\n    H20_RAW_BYTE(ch);"
+      },
+      {
+        "old": "    raw_meta(\"H07_RAW_BEGIN\",job,crc,fnv);",
+        "new": "#if H20_RAW_EXPORT\n    raw_meta(\"H07_RAW_BEGIN\",job,crc,fnv);\n#endif"
+      },
+      {
+        "old": "        raw_text(\"H07_RAW_CHUNK\");raw_field(\" job=\",job);raw_field(\" index=\",index);",
+        "new": "#if H20_RAW_EXPORT\n        raw_text(\"H07_RAW_CHUNK\");raw_field(\" job=\",job);raw_field(\" index=\",index);"
+      },
+      {
+        "old": "        raw_field(\" crc32=\",cc^0xffffffffu);raw_text(\"\\n\");",
+        "new": "        raw_field(\" crc32=\",cc^0xffffffffu);raw_text(\"\\n\");\n#else\n        (void)cc;(void)chunk;(void)digits;\n#endif"
+      },
+      {
+        "old": "    raw_meta(\"H07_RAW_END\",job,crc,fnv);",
+        "new": "#if H20_RAW_EXPORT\n    raw_meta(\"H07_RAW_END\",job,crc,fnv);\n#else\n    raw_meta(\"H20_RAW_HASH\",job,crc,fnv);\n#endif"
+      },
+      {
+        "old": "    h18_ui_init();",
+        "new": "    h07_failed=h07_input_released=raw_tx_failed=0u;\n    h07_raw_crc=h07_raw_fnv=h07_chw_crc=h07_chw_fnv=0u;\n    h20_active_job=0u;last_seq=last_state=last_ready=last_valid=sample_index=0u;\n    last_sample_cycle=raw_tx_deadline=0u;\n    for(unsigned i=0;i<16;i++)last_words[i]=0u;\n    h18_ui_init();\n    if(h20_have_guards && !guards_ok()) {error(24);return 0;}"
+      },
+      {
+        "old": "    hex(\"H07_INPUT_LAYOUT guard_low=\",",
+        "new": "    h20_have_guards=1u;\n    hex(\"H07_INPUT_LAYOUT guard_low=\","
+      },
+      {
+        "old": "    uart_puts(\"H07_READY_COMMAND\\n\");\n    while(uart_getc_nonblock()!='C') {}",
+        "new": "    hex(\"H20_AUTO_READY round=\",h20_round_number);\n    hex(\" expected_job=\",h20_expected_job);uart_puts(\"\\n\");"
+      },
+      {
+        "old": "    if(C(4)!=0u || C(0x18)!=0u) { error(4);return 0; }",
+        "new": "    if(C(4)!=0u || C(0x18)!=h20_previous_job || h20_previous_job==0xffffffffu ||\n       h20_expected_job!=h20_previous_job+1u) { error(4);return 0; }\n    h20_active_job=h20_expected_job;"
+      },
+      {
+        "old": "    uart_puts(\"H07_START job=00000001\\n\");",
+        "new": "    hex(\"H07_START job=\",h20_active_job);uart_puts(\"\\n\");"
+      },
+      {
+        "old": "    uint64_t begin=rdcycle64();C(0)=1u;deadline=begin+1000000000ull;",
+        "new": "    uint64_t begin=rdcycle64();H20_WRITE(0,1u);deadline=begin+1000000000ull;"
+      },
+      {
+        "old": "    if(job!=1u || !raw_guard(job)){error(6);return 0;}",
+        "new": "    if(job!=h20_active_job || !raw_guard(job)){error(6);return 0;}"
+      },
+      {
+        "old": "    C(0)=4u;deadline=rdcycle64()+1000000000ull;",
+        "new": "    H20_WRITE(0,4u);deadline=rdcycle64()+1000000000ull;"
+      },
+      {
+        "old": "C(0x18)!=1u||crc!=h07_chw_crc",
+        "new": "C(0x18)!=h20_active_job||!h20_active_job||crc!=h07_chw_crc"
+      },
+      {
+        "old": "    hex(\" crc32=\",crc);hex(\" fnv1a=\",fnv);uart_puts(\"\\nH07_DONE job=00000001\\n\");",
+        "new": "    hex(\" crc32=\",crc);hex(\" fnv1a=\",fnv);uart_puts(\"\\n\");\n    hex(\"H07_DONE job=\",h20_active_job);uart_puts(\"\\n\");"
+      }
+    ],
+    "exact_reverse_original": true
+  },
+  "result_ui.c": {
+    "base_sha256": "2B20FD07AC4B7DDC377F8AC2E96BFD122592C33F595382848D300C2D773B22FF",
+    "generated_sha256": "ACC76C4CABD6CAD9389AE155BE205FC61AA6C9C9CEB38512B37C825FFE54796F",
+    "hooks": [
+      {
+        "old": "COLD int h18_ui_exit(int main_return) {",
+        "new": "COLD uint32_t h20_ui_complete_ok(void) {\n    return available && !transport_failed && !failed && time_valid && final_guard_passed;\n}\nCOLD int h18_ui_exit(int main_return) {"
+      }
+    ],
+    "exact_reverse_original": true
+  },
+  "result_ui.h": {
+    "base_sha256": "AEC6E7227551FFB5BE160C4C7A541C838EAA84A5B0C6E6B5336C4F9224B7EB89",
+    "generated_sha256": "B4DAD4CB4A896A6611F41ED90FA881B5803324E19197535D86F87DAE81E9A029",
+    "hooks": [
+      {
+        "old": "int h18_ui_exit(int main_return);",
+        "new": "int h18_ui_exit(int main_return);\nuint32_t h20_ui_complete_ok(void);"
+      }
+    ],
+    "exact_reverse_original": true
+  }
+}

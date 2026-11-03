@@ -1,0 +1,2247 @@
+{
+  "header": {
+    "major": 0,
+    "minor": 2,
+    "revision": 5,
+    "seen": 14231680
+  },
+  "input_shape": [
+    320,
+    320,
+    3
+  ],
+  "float_count": 346062,
+  "layers": [
+    {
+      "index": 0,
+      "type": "convolutional",
+      "input": [
+        320,
+        320,
+        3
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "size": 3,
+      "stride": 2,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 0,
+      "float_count": 248
+    },
+    {
+      "index": 1,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 248,
+      "float_count": 96
+    },
+    {
+      "index": 2,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 8,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 344,
+      "float_count": 104
+    },
+    {
+      "index": 3,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        4
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 448,
+      "float_count": 48
+    },
+    {
+      "index": 4,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        4
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 496,
+      "float_count": 64
+    },
+    {
+      "index": 5,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        8
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 8,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 560,
+      "float_count": 104
+    },
+    {
+      "index": 6,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        8
+      ],
+      "shape": [
+        160,
+        160,
+        4
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 664,
+      "float_count": 48
+    },
+    {
+      "index": 7,
+      "type": "dropout",
+      "shape": [
+        160,
+        160,
+        4
+      ]
+    },
+    {
+      "index": 8,
+      "type": "shortcut",
+      "source": 3,
+      "shape": [
+        160,
+        160,
+        4
+      ]
+    },
+    {
+      "index": 9,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        4
+      ],
+      "shape": [
+        160,
+        160,
+        24
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 712,
+      "float_count": 192
+    },
+    {
+      "index": 10,
+      "type": "convolutional",
+      "input": [
+        160,
+        160,
+        24
+      ],
+      "shape": [
+        80,
+        80,
+        24
+      ],
+      "size": 3,
+      "stride": 2,
+      "groups": 24,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 904,
+      "float_count": 312
+    },
+    {
+      "index": 11,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        24
+      ],
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 1216,
+      "float_count": 224
+    },
+    {
+      "index": 12,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        8
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 1440,
+      "float_count": 384
+    },
+    {
+      "index": 13,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 32,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 1824,
+      "float_count": 416
+    },
+    {
+      "index": 14,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 2240,
+      "float_count": 288
+    },
+    {
+      "index": 15,
+      "type": "dropout",
+      "shape": [
+        80,
+        80,
+        8
+      ]
+    },
+    {
+      "index": 16,
+      "type": "shortcut",
+      "source": 11,
+      "shape": [
+        80,
+        80,
+        8
+      ]
+    },
+    {
+      "index": 17,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        8
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 2528,
+      "float_count": 384
+    },
+    {
+      "index": 18,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 32,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 2912,
+      "float_count": 416
+    },
+    {
+      "index": 19,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        80,
+        80,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 3328,
+      "float_count": 288
+    },
+    {
+      "index": 20,
+      "type": "dropout",
+      "shape": [
+        80,
+        80,
+        8
+      ]
+    },
+    {
+      "index": 21,
+      "type": "shortcut",
+      "source": 16,
+      "shape": [
+        80,
+        80,
+        8
+      ]
+    },
+    {
+      "index": 22,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        8
+      ],
+      "shape": [
+        80,
+        80,
+        32
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 3616,
+      "float_count": 384
+    },
+    {
+      "index": 23,
+      "type": "convolutional",
+      "input": [
+        80,
+        80,
+        32
+      ],
+      "shape": [
+        40,
+        40,
+        32
+      ],
+      "size": 3,
+      "stride": 2,
+      "groups": 32,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 4000,
+      "float_count": 416
+    },
+    {
+      "index": 24,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        32
+      ],
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 4416,
+      "float_count": 288
+    },
+    {
+      "index": 25,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        8
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 4704,
+      "float_count": 576
+    },
+    {
+      "index": 26,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 48,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 5280,
+      "float_count": 624
+    },
+    {
+      "index": 27,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 5904,
+      "float_count": 416
+    },
+    {
+      "index": 28,
+      "type": "dropout",
+      "shape": [
+        40,
+        40,
+        8
+      ]
+    },
+    {
+      "index": 29,
+      "type": "shortcut",
+      "source": 24,
+      "shape": [
+        40,
+        40,
+        8
+      ]
+    },
+    {
+      "index": 30,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        8
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 6320,
+      "float_count": 576
+    },
+    {
+      "index": 31,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 48,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 6896,
+      "float_count": 624
+    },
+    {
+      "index": 32,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        8
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 7520,
+      "float_count": 416
+    },
+    {
+      "index": 33,
+      "type": "dropout",
+      "shape": [
+        40,
+        40,
+        8
+      ]
+    },
+    {
+      "index": 34,
+      "type": "shortcut",
+      "source": 29,
+      "shape": [
+        40,
+        40,
+        8
+      ]
+    },
+    {
+      "index": 35,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        8
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 7936,
+      "float_count": 576
+    },
+    {
+      "index": 36,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        48
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 48,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 8512,
+      "float_count": 624
+    },
+    {
+      "index": 37,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        48
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 9136,
+      "float_count": 832
+    },
+    {
+      "index": 38,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 9968,
+      "float_count": 1920
+    },
+    {
+      "index": 39,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 96,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 11888,
+      "float_count": 1248
+    },
+    {
+      "index": 40,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 13136,
+      "float_count": 1600
+    },
+    {
+      "index": 41,
+      "type": "dropout",
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 42,
+      "type": "shortcut",
+      "source": 37,
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 43,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 14736,
+      "float_count": 1920
+    },
+    {
+      "index": 44,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 96,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 16656,
+      "float_count": 1248
+    },
+    {
+      "index": 45,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 17904,
+      "float_count": 1600
+    },
+    {
+      "index": 46,
+      "type": "dropout",
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 47,
+      "type": "shortcut",
+      "source": 42,
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 48,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 19504,
+      "float_count": 1920
+    },
+    {
+      "index": 49,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 96,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 21424,
+      "float_count": 1248
+    },
+    {
+      "index": 50,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 22672,
+      "float_count": 1600
+    },
+    {
+      "index": 51,
+      "type": "dropout",
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 52,
+      "type": "shortcut",
+      "source": 47,
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 53,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 24272,
+      "float_count": 1920
+    },
+    {
+      "index": 54,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 96,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 26192,
+      "float_count": 1248
+    },
+    {
+      "index": 55,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        40,
+        40,
+        16
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 27440,
+      "float_count": 1600
+    },
+    {
+      "index": 56,
+      "type": "dropout",
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 57,
+      "type": "shortcut",
+      "source": 52,
+      "shape": [
+        40,
+        40,
+        16
+      ]
+    },
+    {
+      "index": 58,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        16
+      ],
+      "shape": [
+        40,
+        40,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 29040,
+      "float_count": 1920
+    },
+    {
+      "index": 59,
+      "type": "convolutional",
+      "input": [
+        40,
+        40,
+        96
+      ],
+      "shape": [
+        20,
+        20,
+        96
+      ],
+      "size": 3,
+      "stride": 2,
+      "groups": 96,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 30960,
+      "float_count": 1248
+    },
+    {
+      "index": 60,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        96
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 32208,
+      "float_count": 2400
+    },
+    {
+      "index": 61,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 34608,
+      "float_count": 3808
+    },
+    {
+      "index": 62,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 136,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 38416,
+      "float_count": 1768
+    },
+    {
+      "index": 63,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 40184,
+      "float_count": 3360
+    },
+    {
+      "index": 64,
+      "type": "dropout",
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 65,
+      "type": "shortcut",
+      "source": 60,
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 66,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 43544,
+      "float_count": 3808
+    },
+    {
+      "index": 67,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 136,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 47352,
+      "float_count": 1768
+    },
+    {
+      "index": 68,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 49120,
+      "float_count": 3360
+    },
+    {
+      "index": 69,
+      "type": "dropout",
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 70,
+      "type": "shortcut",
+      "source": 65,
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 71,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 52480,
+      "float_count": 3808
+    },
+    {
+      "index": 72,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 136,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 56288,
+      "float_count": 1768
+    },
+    {
+      "index": 73,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 58056,
+      "float_count": 3360
+    },
+    {
+      "index": 74,
+      "type": "dropout",
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 75,
+      "type": "shortcut",
+      "source": 70,
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 76,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 61416,
+      "float_count": 3808
+    },
+    {
+      "index": 77,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 136,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 65224,
+      "float_count": 1768
+    },
+    {
+      "index": 78,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        20,
+        20,
+        24
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 66992,
+      "float_count": 3360
+    },
+    {
+      "index": 79,
+      "type": "dropout",
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 80,
+      "type": "shortcut",
+      "source": 75,
+      "shape": [
+        20,
+        20,
+        24
+      ]
+    },
+    {
+      "index": 81,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        24
+      ],
+      "shape": [
+        20,
+        20,
+        136
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 70352,
+      "float_count": 3808
+    },
+    {
+      "index": 82,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        136
+      ],
+      "shape": [
+        10,
+        10,
+        136
+      ],
+      "size": 3,
+      "stride": 2,
+      "groups": 136,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 74160,
+      "float_count": 1768
+    },
+    {
+      "index": 83,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        136
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 75928,
+      "float_count": 6720
+    },
+    {
+      "index": 84,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 82648,
+      "float_count": 11648
+    },
+    {
+      "index": 85,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 224,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 94296,
+      "float_count": 2912
+    },
+    {
+      "index": 86,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 97208,
+      "float_count": 10944
+    },
+    {
+      "index": 87,
+      "type": "dropout",
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 88,
+      "type": "shortcut",
+      "source": 83,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 89,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 108152,
+      "float_count": 11648
+    },
+    {
+      "index": 90,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 224,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 119800,
+      "float_count": 2912
+    },
+    {
+      "index": 91,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 122712,
+      "float_count": 10944
+    },
+    {
+      "index": 92,
+      "type": "dropout",
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 93,
+      "type": "shortcut",
+      "source": 88,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 94,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 133656,
+      "float_count": 11648
+    },
+    {
+      "index": 95,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 224,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 145304,
+      "float_count": 2912
+    },
+    {
+      "index": 96,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 148216,
+      "float_count": 10944
+    },
+    {
+      "index": 97,
+      "type": "dropout",
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 98,
+      "type": "shortcut",
+      "source": 93,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 99,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 159160,
+      "float_count": 11648
+    },
+    {
+      "index": 100,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 224,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 170808,
+      "float_count": 2912
+    },
+    {
+      "index": 101,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 173720,
+      "float_count": 10944
+    },
+    {
+      "index": 102,
+      "type": "dropout",
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 103,
+      "type": "shortcut",
+      "source": 98,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 104,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        48
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 184664,
+      "float_count": 11648
+    },
+    {
+      "index": 105,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        224
+      ],
+      "size": 3,
+      "stride": 1,
+      "groups": 224,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 196312,
+      "float_count": 2912
+    },
+    {
+      "index": 106,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        224
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 199224,
+      "float_count": 10944
+    },
+    {
+      "index": 107,
+      "type": "dropout",
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 108,
+      "type": "shortcut",
+      "source": 103,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 109,
+      "type": "maxpool",
+      "size": 3,
+      "stride": 1,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 110,
+      "type": "route",
+      "sources": [
+        108
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 111,
+      "type": "maxpool",
+      "size": 5,
+      "stride": 1,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 112,
+      "type": "route",
+      "sources": [
+        108
+      ],
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 113,
+      "type": "maxpool",
+      "size": 9,
+      "stride": 1,
+      "shape": [
+        10,
+        10,
+        48
+      ]
+    },
+    {
+      "index": 114,
+      "type": "route",
+      "sources": [
+        113,
+        111,
+        109,
+        108
+      ],
+      "shape": [
+        10,
+        10,
+        192
+      ]
+    },
+    {
+      "index": 115,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        192
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 210168,
+      "float_count": 18816
+    },
+    {
+      "index": 116,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "size": 5,
+      "stride": 1,
+      "groups": 96,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 228984,
+      "float_count": 2784
+    },
+    {
+      "index": 117,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 231768,
+      "float_count": 9600
+    },
+    {
+      "index": 118,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "size": 5,
+      "stride": 1,
+      "groups": 96,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 241368,
+      "float_count": 2784
+    },
+    {
+      "index": 119,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 244152,
+      "float_count": 9600
+    },
+    {
+      "index": 120,
+      "type": "convolutional",
+      "input": [
+        10,
+        10,
+        96
+      ],
+      "shape": [
+        10,
+        10,
+        255
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": false,
+      "float_offset": 253752,
+      "float_count": 24735
+    },
+    {
+      "index": 121,
+      "type": "yolo",
+      "shape": [
+        10,
+        10,
+        255
+      ]
+    },
+    {
+      "index": 122,
+      "type": "route",
+      "sources": [
+        115
+      ],
+      "shape": [
+        10,
+        10,
+        96
+      ]
+    },
+    {
+      "index": 123,
+      "type": "upsample",
+      "stride": 2,
+      "shape": [
+        20,
+        20,
+        96
+      ]
+    },
+    {
+      "index": 124,
+      "type": "route",
+      "sources": [
+        123,
+        80
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ]
+    },
+    {
+      "index": 125,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "size": 5,
+      "stride": 1,
+      "groups": 120,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 278487,
+      "float_count": 3480
+    },
+    {
+      "index": 126,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 281967,
+      "float_count": 14880
+    },
+    {
+      "index": 127,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "size": 5,
+      "stride": 1,
+      "groups": 120,
+      "activation": "leaky",
+      "batch_norm": true,
+      "float_offset": 296847,
+      "float_count": 3480
+    },
+    {
+      "index": 128,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        120
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": true,
+      "float_offset": 300327,
+      "float_count": 14880
+    },
+    {
+      "index": 129,
+      "type": "convolutional",
+      "input": [
+        20,
+        20,
+        120
+      ],
+      "shape": [
+        20,
+        20,
+        255
+      ],
+      "size": 1,
+      "stride": 1,
+      "groups": 1,
+      "activation": "linear",
+      "batch_norm": false,
+      "float_offset": 315207,
+      "float_count": 30855
+    },
+    {
+      "index": 130,
+      "type": "yolo",
+      "shape": [
+        20,
+        20,
+        255
+      ]
+    }
+  ]
+}
