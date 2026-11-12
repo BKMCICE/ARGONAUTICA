@@ -4,14 +4,15 @@
 
 本仓库可用于阅读 CPU、Cache、定点计算、固件调度与图像接口实现，检查模型数据与软件配方，以及在准备相应工具后编译独立软件。完整板级综合与上板前还需恢复缺失的厂商 IP；见 [IP_RESTORE.md](../IP_RESTORE.md)。
 
-分发文件字节、演示应用源文件与模型配方检查：
+使用 Python 3.9 或更新版本检查分发文件、应用、启动程序和模型配方。
 
 ```bash
 python tools/verify_source.py
 python demo/software/build.py --check
+python demo/software/build.py --component boot --check
 ```
 
-前一条命令只核对当前分发的保存字节，不检查被排除的厂商实现，也不执行板级验证。编译软件需要 xPack RISC-V GCC 15.2.0，支持 RV32IM／ILP32 multilib。输出目录应为新的独立目录：
+编译软件需要 xPack RISC-V GCC 15.2.0，支持 RV32IM／ILP32 multilib。使用仓库外的新输出目录。Windows 下，输出目录与仓库应位于同一盘符。
 
 ```text
 python demo/software/build.py --toolchain <GCC-bin-directory> --output <new-output-directory>

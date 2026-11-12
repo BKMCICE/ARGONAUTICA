@@ -1,10 +1,10 @@
-# ARGONAUTICA
+# ARGONAUTICA · 紫光RISCV指令集CPU设计
 
-基于 RV32IM 处理器与 FPGA 定点加速单元的目标检测系统。
+面向盘古 50K FPGA 的五级 RV32IM 处理器与嵌入式计算系统。
 
-ARGONAUTICA 面向盘古 50K FPGA 平台开发，包含五级流水 RISC-V CPU、Cache／TCM、裸机运行时、计算加速逻辑，以及 HDMI 图像采样与检测结果显示代码。完整系统曾实现从板载 Flash 启动，自动执行“采集输入 → YOLO 推理 → 显示结果 → 下一轮”。
+自研 CPU 运行裸机程序，通过内存映射接口调度定点运算单元。完整系统可从板载 Flash 自启动，循环完成 HDMI 图像采样、YOLO 目标检测与文字结果显示。
 
-本仓库展示项目源码与设计方法。厂商专有 IP、已配置位流、Flash 镜像和内部开发历史不随本仓库分发；它不是完整比赛交付包，也不是解压后即可直接下载上板的工程。
+仓库提供项目源码、模型数据、工程参考与验证摘要。完整板级构建需要在具备相应授权的 PDS 环境中恢复厂商 IP，并重新生成配置镜像。恢复步骤见 [IP 恢复说明](IP_RESTORE.md)。
 
 ## 系统设计
 
@@ -19,11 +19,10 @@ flowchart LR
     IP[外部厂商 DDR / PLL IP] -.需授权环境恢复.-> MEM
 ```
 
-- **CPU**：IF、ID、EX、MEM、WB 五级流水，提供乘除法、CSR、异常处理、前递、停顿及可配置分支预测。
-- **存储**：指令／数据 Cache、片上 TCM 与外部 DDR3 接口。热点代码和栈使用 TCM，模型与工作区主要使用 DDR3。
-- **计算**：INT8 权重与激活、定点重标定，CPU 通过 MMIO 调度分块计算路径，并完成后处理。
-- **图像**：完整系统使用 1080p60 HDMI 输入，采样为 320×320 模型帧，输出独立文字结果页。
-- **模型**：固定 YOLO-Fastest 1.1 COCO 模型及量化参数，保留上游来源与许可。
+- CPU 采用取指、译码、执行、访存和写回五级流水，支持乘除法、数据前递、停顿、32 项分支目标缓冲及机器态异常中断。
+- 指令缓存和数据缓存均为两路组相联。识别应用的热点代码和栈使用片上 TCM，模型与工作区主要使用 DDR3。
+- CPU 调度 INT8 点积与定点量化，并运行 YOLO-Fastest 1.1 COCO 模型的后处理。
+- HDMI 输入为 1920×1080、60 Hz，模型帧为 320×320，HDMI 输出为 640×480 文字结果页。
 
 ## 源码目录
 
@@ -46,31 +45,30 @@ git clone https://github.com/BKMCICE/ARGONAUTICA.git
 cd ARGONAUTICA
 ```
 
-仓库中的第三方代码以实际文件保存，不需要通过内部工作目录补齐。使用 Python 3 核对分发文件字节，并检查演示应用的源文件与配方：
+使用 Python 3.9 或更新版本核对分发文件，并检查应用与启动程序的源文件和构建配方。
 
 ```bash
 python tools/verify_source.py
 python demo/software/build.py --check
+python demo/software/build.py --component boot --check
 ```
 
-若要编译该软件快照，准备支持 RV32IM／ILP32 的 xPack RISC-V GCC 15.2.0，并使用新的独立输出目录：
+编译软件需要支持 RV32IM／ILP32 的 xPack RISC-V GCC 15.2.0。请选择仓库外的新输出目录。Windows 下，输出目录与仓库应位于同一盘符。
 
 ```text
 python demo/software/build.py --toolchain <GCC-bin-directory> --output <new-output-directory>
 ```
 
-该命令构建裸机软件，不会恢复缺失的 DDR3／PLL IP，也不会配置开发板。源码检查通过不等于完成物理实现。详细说明见[源码使用](docs/QUICKSTART.md)与[IP 恢复说明](IP_RESTORE.md)。
+启动程序构建命令与板级依赖见 [源码使用](docs/QUICKSTART.md)。
 
 ## 原系统实测摘要
 
-完整系统在盘古 50K／PGL50H 平台上完成过 Flash 冷启动和三轮自动识别对照：狗图 → 纯白 → 狗图，检测数量为 4 → 0 → 4。狗图纯前向约 7.81 秒；相邻轮起点约 13 秒，包含 3 秒结果保持。
+完整系统在盘古 50K 开发板上完成了 CoreMark 代码放置对照、Flash 冷启动与连续识别。独立的流水观测配置采集了链表排序、矩阵运算和状态转换的实际运行窗口。
 
-这些是原完整配置的有限实测结果。当前源码导出缺少厂商实现与原配置镜像，不能据此声称独立重现了同样的上板结果。输入 60 Hz 也不代表每秒完成 60 次识别。[验证范围](docs/VALIDATION.md)区分了源码检查、软件重建与物理测试。
+连续识别依次输入犬与自行车测试图像、纯白图像及同一张测试图像，检测数为 4、0、4。犬与自行车测试图像的网络前向约 7.81 秒，完整循环约 13 秒，其中包括 3 秒结果保持。实测配置与软件重建结果见 [验证记录](docs/VALIDATION.md)。
 
 ![原完整系统的实际 FPGA 文字结果页](docs/assets/result-detections.png)
 
 ## 分发与许可
 
-项目原创部分尚未指定统一开源许可证；源码可见不等于已授予任意使用、修改或再分发许可。各第三方组件保留原版权及许可证，详见[第三方说明](docs/THIRD_PARTY_NOTICES.md)。
-
-Pango 专有 IP、预编译硬件／固件、个人许可证、内部日志与原始 Git 历史均不属于本仓库的分发范围。本仓库不使用占位模块冒充已验证的厂商实现，恢复完整板级工程须另行具备相应环境与授权。
+项目原创部分尚未指定统一开源许可证。第三方组件保留各自的版权和许可证，详见 [第三方说明](docs/THIRD_PARTY_NOTICES.md)。公开快照的文件范围见 [分发说明](docs/PUBLICATION.md)。
